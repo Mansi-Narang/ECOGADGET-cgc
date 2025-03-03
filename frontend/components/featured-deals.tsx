@@ -9,7 +9,6 @@ import macbook from './macbookm1.png';
 import samsung21 from './samsungs21.png';
 import axios from 'axios';
 import { Button } from '@/components/ui/button'
-import { useEffect, useState } from "react"
 
 const deals = [
   {

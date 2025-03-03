@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Heart } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 import { StarRating } from './star-rating'
 import { Button } from '@/components/ui/button'
 import axios from 'axios'
