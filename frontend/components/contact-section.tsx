@@ -30,6 +30,15 @@ export function ContactSection() {
     });
   }
 
+  const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setFormData((prevData) => {
+      return {
+        ...prevData,
+        [e.target.name]: e.target.value
+      }
+    });
+  }
+
   const handleSubmit = async(e: FormEvent)=>{
     e.preventDefault();
     if(!formData.firstName || !formData.lastName || !formData.email || !formData.subject || !formData.message){
@@ -117,7 +126,7 @@ export function ContactSection() {
                       className="min-h-[150px]"
                       name = "message"
                       value={formData.message}
-                      onChange={handleInputChange}
+                      onChange={handleTextChange}
                     />
                   </div>
                   <Button type="submit" onClick={handleSubmit} className="w-full">
