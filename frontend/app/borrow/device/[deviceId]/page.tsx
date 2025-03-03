@@ -41,7 +41,7 @@ export default function RentPage() {
   const [deviceData, setDeviceData] = React.useState<DeviceData | null>(null);
 
   const handleRentClick = async(e: Event) => {
-    let amount: string | number = deviceData?.dailyRate!;
+    let amount: string | number = deviceData!.dailyRate!;
     if(typeof amount != 'number') amount = parseFloat(amount);
     amount += (32/100) * amount;
     amount = amount.toFixed(2).toString();
