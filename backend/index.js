@@ -29,10 +29,10 @@ const connectDb = async () => {
 };
 
 connectDb()
-  .then(() => {
+  .then(async () => {
     console.log("Mongo DB connected!");
 
-    dbInitializer();
+    await dbInitializer();
     async function createVectorSearchIndex() {
       const model = {
         name: "vector_index",
@@ -112,8 +112,6 @@ app.get("/products/vectorSearch", async (req, res) => {
   if (!q) throw new Error("No params found");
 
   const products = await vectorSearch(q);
-
-  console.log(products);
 
   return res.json({ products });
 });
