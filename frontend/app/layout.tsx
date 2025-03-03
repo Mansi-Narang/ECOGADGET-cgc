@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import 'dotenv/config';
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,12 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <AuthProvider>{ children }</AuthProvider>
-      </body>
+        <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="beforeInteractive" />
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <AuthProvider>{children}</AuthProvider>
+        </body>
       </head>
     </html>
   );
