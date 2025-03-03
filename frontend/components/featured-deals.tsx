@@ -9,7 +9,7 @@ import macbook from './macbookm1.png';
 import samsung21 from './samsungs21.png';
 import axios from 'axios';
 import { Button } from '@/components/ui/button'
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 const deals = [
   {
@@ -43,11 +43,14 @@ const deals = [
 
 export function FeaturedDeals({ sectionRef }) {
 
+  const [razorpayLoaded, setRazorpayLoaded] = useState(false);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://checkout.razorpay.com/v1/checkout.js";
     script.async = true;
     document.body.appendChild(script);
+    setRazorpayLoaded(true);
   }, []);
 
   return (
@@ -102,6 +105,10 @@ export function FeaturedDeals({ sectionRef }) {
                       className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-black"
                       onClick={
                         async (e) => {
+                          if(!razorpayLoaded) {
+                            console.error("Razorpay not loaded");
+                            return;
+                          }
                           let amount: number | string = deal.price.toString();
                           amount = parseFloat(amount);
                           amount = amount.toFixed(2).toString();

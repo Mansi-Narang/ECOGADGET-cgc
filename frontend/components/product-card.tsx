@@ -26,13 +26,15 @@ export function ProductCard({
   condition,
   warranty
 }: ProductCardProps) {
-  const [isSaved, setIsSaved] = useState(false)
+  const [isSaved, setIsSaved] = useState(false);
+  const [razorpayLoaded, setRazorpayLoaded] = useState(false);
 
   useEffect(() => {
     const script = document.createElement("script");
     script.src = 'https://checkout.razorpay.com/v1/checkout.js';
     script.async = true;
     document.body.appendChild(script);
+    setRazorpayLoaded(true);
   }, []);
 
   return (
@@ -67,6 +69,10 @@ export function ProductCard({
         <div className="flex gap-2">
           <Button 
             className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-black" onClick={async (e) => {
+              if(!razorpayLoaded) {
+                console.error("Razorpay not Loaded");
+                return;
+              }
               let amount: number | string = price.toString();
               amount = parseFloat(amount);
               amount = amount.toFixed(2).toString();

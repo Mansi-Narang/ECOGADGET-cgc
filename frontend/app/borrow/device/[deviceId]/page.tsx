@@ -35,12 +35,17 @@ export default function RentPage() {
   const [loading, setLoading] = React.useState(true)
   const [selectedImage, setSelectedImage] = React.useState(0)
   const [agreed, setAgreed] = React.useState(false)
+  const [razorpayLoaded, setRazorpayLoaded] = React.useState<Boolean>(false);
 
   const { deviceId } = useParams();
 
   const [deviceData, setDeviceData] = React.useState<DeviceData | null>(null);
 
   const handleRentClick = async(e: Event) => {
+    if(!razorpayLoaded && typeof window !== 'undefined') {
+      console.error("Razorpay not loaded");
+      return;
+    }
     let amount: string | number = deviceData!.dailyRate!;
     if(typeof amount != 'number') amount = parseFloat(amount);
     amount += (32/100) * amount;
@@ -81,6 +86,7 @@ export default function RentPage() {
     script.src = "https://checkout.razorpay.com/v1/checkout.js";
     script.async = true;
     document.body.appendChild(script);
+    setRazorpayLoaded(true);
 
 
     if(!deviceId) return;
