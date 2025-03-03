@@ -58,7 +58,7 @@ export function SellDeviceForm() {
     const result = await axios({
       method: "post",
       data: formData,
-      url: "https://ecogadget.onrender.com/sell",
+      url: "http://localhost:4000/sell",
     });
 
     const response = result.data;

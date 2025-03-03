@@ -32,7 +32,7 @@ export default function SignupPage() {
 
     const result = await axios({
       method: "POST",
-      url: "https://ecogadget.onrender.com/signup",
+      url: "http://localhost:4000/signup",
       data: { email, username, password, address }
     });
 

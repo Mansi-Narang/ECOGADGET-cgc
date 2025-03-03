@@ -32,7 +32,7 @@ const ProfilePage = () => {
   const handleSave = async () => {
     setIsEditing(false);
     const updatedUser = await axios.post(
-      "https://ecogadget.onrender.com/updateUser",
+      "http://localhost:4000/updateUser",
       formData
     );
     setFormData(updatedUser.data);

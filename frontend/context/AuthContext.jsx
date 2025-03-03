@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         let fetchUser = async () => {
             try{
-                const result = await axios.get("https://ecogadget.onrender.com/user", {
+                const result = await axios.get("http://localhost:4000/user", {
                     withCredentials: true,
                 });
 

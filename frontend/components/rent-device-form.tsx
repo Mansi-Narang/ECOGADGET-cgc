@@ -30,7 +30,7 @@ export function RentDeviceForm() {
 
   useEffect(() => {
     const fetchDevices = async() => {
-      const ds = await axios.get("https://ecogadget.onrender.com/rent/devices");
+      const ds = await axios.get("http://localhost:4000/rent/devices");
 
       const result = ds.data;
       result.devices.forEach((device) => {

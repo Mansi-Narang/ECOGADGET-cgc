@@ -41,7 +41,7 @@ export function TechnicianApplicationForm() {
 
     const result = await axios({
       method: 'post',
-      url: 'https://ecogadget.onrender.com/repair/technician',
+      url: 'http://localhost:4000/repair/technician',
       data: formData
     });
 

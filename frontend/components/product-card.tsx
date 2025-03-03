@@ -27,15 +27,13 @@ export function ProductCard({
   warranty
 }: ProductCardProps) {
   const [isSaved, setIsSaved] = useState(false);
-  const [razorpayLoaded, setRazorpayLoaded] = useState(false);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-    script.async = true;
-    document.body.appendChild(script);
-    setRazorpayLoaded(true);
-  }, []);
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+  //   script.async = true;
+  //   document.body.appendChild(script);
+  // }, []);
 
   return (
     <motion.div
@@ -69,17 +67,13 @@ export function ProductCard({
         <div className="flex gap-2">
           <Button
             className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-black" onClick={async (e) => {
-              if (!razorpayLoaded) {
-                console.error("Razorpay not Loaded");
-                return;
-              }
               let amount: number | string = price.toString();
               amount = parseFloat(amount);
               amount = amount.toFixed(2).toString();
               amount = amount.split(".")[0] + amount.split(".")[1];
               amount = Number(amount);
 
-              const response1 = await axios.post("https://ecogadget.onrender.com/orders/create", {
+              const response1 = await axios.post("http://localhost:4000/orders/create", {
                 amount, currency: "INR"
               });
 
@@ -91,12 +85,8 @@ export function ProductCard({
                 "order_id": response1.data.id,
                 "callback_url": "/orders"
               };
-              if (!window.Razorpay) return;
-              let rzp1;
-              if (window.Razorpay) {
-                rzp1 = new window.Razorpay(options);
-                rzp1.open();
-              }
+              const rzp1 = new window.Razorpay(options);
+              rzp1.open();
               e.preventDefault();
             }}>
             Buy Now

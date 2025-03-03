@@ -35,17 +35,12 @@ export default function RentPage() {
   const [loading, setLoading] = React.useState(true);
   const [selectedImage, setSelectedImage] = React.useState(0)
   const [agreed, setAgreed] = React.useState(false)
-  const [razorpayLoaded, setRazorpayLoaded] = React.useState<boolean>(false);
 
   const { deviceId } = useParams();
 
   const [deviceData, setDeviceData] = React.useState<DeviceData | null>(null);
 
   const handleRentClick = async (e: Event) => {
-    if (!razorpayLoaded && typeof window !== 'undefined') {
-      console.error("Razorpay not loaded");
-      return;
-    }
     let amount: string | number = deviceData!.dailyRate!;
     if (typeof amount != 'number') amount = parseFloat(amount);
     amount += (32 / 100) * amount;
@@ -59,7 +54,7 @@ export default function RentPage() {
     const result = await axios({
       method: "post",
       data: { amount, currency },
-      url: "https://ecogadget.onrender.com/orders/create"
+      url: "http://localhost:4000/orders/create"
     });
 
     const response = result.data;
@@ -73,29 +68,24 @@ export default function RentPage() {
       "order_id": response.id,
       "callback_url": "http://localhost:3000/orders",
     };
-    if(!window.Razorpay) return;
-    let rzp1;
-    if (window.Razorpay) {
-      rzp1 = new window.Razorpay(options);
-      rzp1.open();
-    }
+    const rzp1 = new window.Razorpay(options);
+    rzp1.open();
 
     e.preventDefault();
   }
 
   React.useEffect(() => {
 
-    const script = document.createElement("script");
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
-    script.async = true;
-    document.body.appendChild(script);
-    setRazorpayLoaded(true);
+    // const script = document.createElement("script");
+    // script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    // script.async = true;
+    // document.body.appendChild(script);
 
 
     if (!deviceId) return;
 
     const fetchDevice = async () => {
-      const result = await axios.get(`https://ecogadget.onrender.com/rent/devices/${deviceId}`);
+      const result = await axios.get(`http://localhost:4000/rent/devices/${deviceId}`);
       const response = result.data;
 
       const { device } = response;

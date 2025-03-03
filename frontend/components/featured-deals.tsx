@@ -43,15 +43,12 @@ const deals = [
 
 export function FeaturedDeals({ sectionRef }) {
 
-  const [razorpayLoaded, setRazorpayLoaded] = useState(false);
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
-    script.async = true;
-    document.body.appendChild(script);
-    setRazorpayLoaded(true);
-  }, []);
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src = "https://checkout.razorpay.com/v1/checkout.js";
+  //   script.async = true;
+  //   document.body.appendChild(script);
+  // }, []);
 
   return (
     <section ref={sectionRef} className="p-20 bg-gray-50">
@@ -105,17 +102,13 @@ export function FeaturedDeals({ sectionRef }) {
                       className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-black"
                       onClick={
                         async () => {
-                          if (!razorpayLoaded) {
-                            console.error("Razorpay not loaded");
-                            return;
-                          }
                           let amount: number | string = deal.price.toString();
                           amount = parseFloat(amount);
                           amount = amount.toFixed(2).toString();
                           amount = amount.split(".")[0] + amount.split(".")[1];
                           amount = Number(amount);
 
-                          const response1 = await axios.post("https://ecogadget.onrender.com/orders/create", {
+                          const response1 = await axios.post("http://localhost:4000/orders/create", {
                             amount, currency: "INR"
                           });
 
@@ -128,12 +121,8 @@ export function FeaturedDeals({ sectionRef }) {
                             "callback_url": "/orders"
                           };
 
-                          if (!window.Razorpay) return;
-                          let rzp1;
-                          if (window.Razorpay) {
-                            rzp1 = new window.Razorpay(options);
-                            rzp1.open();
-                          }
+                          const rzp1 = new window.Razorpay(options);
+                          rzp1.open();
                         }}
                     >
                       Buy Now
