@@ -71,8 +71,8 @@ export function AboutSection({ learnMoreRef }) {
                 <span className="block text-green-600">Electronics Consumption</span>
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                We're not just another marketplace - we're building a sustainable future for electronics. Through our
-                innovative platform, we're transforming how people buy, use, and recycle technology.
+                We&apos;re not just another marketplace - we&apos;re building a sustainable future for electronics. Through our
+                innovative platform, we&apos;re transforming how people buy, use, and recycle technology.
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
                 {features.map((feature, index) => (

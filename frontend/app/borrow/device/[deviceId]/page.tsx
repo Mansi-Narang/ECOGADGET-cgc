@@ -26,7 +26,7 @@ export default function RentPage() {
 
   const { deviceId } = useParams();
 
-  const [deviceData, setDeviceData] = React.useState<any>(null);
+  const [deviceData, setDeviceData] = React.useState(null);
 
   const handleRentClick = async(e) => {
     let amount = deviceData.dailyRate;

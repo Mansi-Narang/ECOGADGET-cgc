@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from "framer-motion"
-import { Mail, MapPin, Phone, MessageSquare, Clock, Globe } from 'lucide-react'
+import { Mail, MapPin, Phone, Clock } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -78,7 +78,7 @@ export function ContactSection() {
         >
           <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
           <p className="text-lg text-gray-600">
-            Have questions about our services? We're here to help you make sustainable choices.
+            Have questions about our services? We&apos;re here to help you make sustainable choices.
           </p>
         </motion.div>
 

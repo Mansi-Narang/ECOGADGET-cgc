@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react'
 import { StarRating } from './star-rating'
 import { Button } from '@/components/ui/button'
 import axios from 'axios'
-import { useRouter } from 'next/navigation' // Import useRouter
 
 interface ProductCardProps {
   _id: string
@@ -20,7 +19,6 @@ interface ProductCardProps {
 }
 
 export function ProductCard({
-  _id,
   productName,
   image,
   price,
@@ -75,7 +73,7 @@ export function ProductCard({
               amount = amount.split(".")[0] + amount.split(".")[1];
               amount = Number(amount);
 
-              const response1: any = await axios.post("https://ecogadget.onrender.com/orders/create", {
+              const response1 = await axios.post("https://ecogadget.onrender.com/orders/create", {
                 amount, currency: "INR"
               });
 

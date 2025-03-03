@@ -11,7 +11,6 @@ import { Wrench, UserCircle } from 'lucide-react'
 import ProtectedRoute from '@/context/ProtectedRoute'
 
 export default function RepairPage() {
-  const [activeTab, setActiveTab] = useState("user");
 
   return (
     <ProtectedRoute>
@@ -26,11 +25,11 @@ export default function RepairPage() {
         >
           <Tabs defaultValue="user" className="space-y-8">
             <TabsList className="grid grid-cols-2 w-full">
-              <TabsTrigger value="user" onClick={() => setActiveTab("user")}>
+              <TabsTrigger value="user" onClick={() =>  {}}>
                 <UserCircle className="w-5 h-5 mr-2" />
                 Request Repair
               </TabsTrigger>
-              <TabsTrigger value="technician" onClick={() => setActiveTab("technician")}>
+              <TabsTrigger value="technician" onClick={() => {}}>
                 <Wrench className="w-5 h-5 mr-2" />
                 Join as Technician
               </TabsTrigger>

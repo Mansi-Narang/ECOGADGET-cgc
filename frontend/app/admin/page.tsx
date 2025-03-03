@@ -58,8 +58,7 @@ export default function AdminDashboard() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [selectedRequest, setSelectedRequest] = useState<SellingRequest | null>(null)
 
-  let [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState([]);
 
   const [sellingRequests, setSellingRequests] = useState([]);
 
@@ -67,7 +66,6 @@ export default function AdminDashboard() {
    const fetchProducts = async() => {
         const productsList = await axios.get('https://ecogadget.onrender.com/products');
         setProducts(productsList.data.products);
-        setLoading(false);
 
         const reqs = await axios.get('https://ecogadget.onrender.com/sell');
         setSellingRequests(reqs.data.products);
@@ -561,7 +559,7 @@ export default function AdminDashboard() {
         <DialogContent className="sm:max-w-[600px]">
           <DialogHeader>
             <DialogTitle>Add New Product</DialogTitle>
-            <DialogDescription>Add a new product to your inventory. Click save when you're done.</DialogDescription>
+            <DialogDescription>Add a new product to your inventory. Click save when you&apos;re done.</DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-2 gap-4">
@@ -632,7 +630,7 @@ export default function AdminDashboard() {
         <DialogContent className="sm:max-w-[600px]">
           <DialogHeader>
             <DialogTitle>Edit Product</DialogTitle>
-            <DialogDescription>Update product information. Click save when you're done.</DialogDescription>
+            <DialogDescription>Update product information. Click save when you&apos;re done.</DialogDescription>
           </DialogHeader>
           {selectedProduct && (
             <div className="grid gap-4 py-4">

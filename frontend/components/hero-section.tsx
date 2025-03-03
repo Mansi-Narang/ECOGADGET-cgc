@@ -38,11 +38,11 @@ export function HeroSection({ sectionRef, learnMoreRef }) {
     }
   ]
 
-  const handleScroll = (e) => {
+  const handleScroll = () => {
     sectionRef.current.scrollIntoView({ behaviour: "smooth" });
   }
 
-  const handleLearnMoreScroll = (e) => {
+  const handleLearnMoreScroll = () => {
     learnMoreRef.current.scrollIntoView({ behaviour: "smooth" });
   }
 

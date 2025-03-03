@@ -2,7 +2,6 @@
 
 import { NavBar } from "@/components/nav-bar"
 import { HeroSection } from "@/components/hero-section"
-import { CategoryScroll } from "@/components/category-scroll"
 import { FeaturedDeals } from "@/components/featured-deals"
 import { AboutSection } from "@/components/about-section"
 import { RepairWorkers } from "@/components/repair-workers"

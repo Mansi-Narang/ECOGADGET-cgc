@@ -26,7 +26,7 @@ const fadeInUp = {
 
 export function RentDeviceForm() {
 
-  const [devices, setDevices] = useState<any[]>([]);
+  const [devices, setDevices] = useState([]);
 
   useEffect(() => {
     const fetchDevices = async() => {

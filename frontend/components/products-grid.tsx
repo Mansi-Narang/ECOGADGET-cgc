@@ -12,7 +12,7 @@ export function ProductsGrid() {
 
   const [searchText, setSearchText] = useState("");
 
-  const handleSearch = async (e) => {
+  const handleSearch = async () => {
     const result = await axios.get(`https://ecogadget.onrender.com/products/vectorSearch?q=${searchText}`);
 
     const response = result.data.products;
