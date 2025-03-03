@@ -192,7 +192,7 @@ export function GiveDeviceForm() {
         <Checkbox
           id="termsAgreed"
           checked={formData.termsAgreed}
-          onCheckedChange={(checked) => setFormData((prev) => ({ ...prev, termsAgreed: checked }))}
+          onCheckedChange={(checked) => setFormData((prev) => ({ ...prev, termsAgreed: !checked }))}
         />
         <Label htmlFor="termsAgreed" className="text-sm text-gray-600">
           I agree to the terms and conditions
