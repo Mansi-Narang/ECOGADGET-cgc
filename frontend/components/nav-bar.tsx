@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, ChangeEvent } from "react";
 import {
   Menu,
   User,
@@ -25,16 +25,24 @@ import { useUser } from "../context/AuthContext.jsx";
 import Swal from "sweetalert2";
 
 export function NavBar() {
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const [showAuthOptions, setShowAuthOptions] = useState(false);
 
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    function handleClickOutside(event: MouseEvent) {
+
+      if(!dropdownRef || !dropdownRef.current) {
+        return;
+      }
+      if (
+        dropdownRef.current && 
+        event.target instanceof Node && 
+        !dropdownRef.current.contains(event.target)
+      ) {
         setShowAuthOptions(false);
       }
     }
-
+  
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -43,7 +51,7 @@ export function NavBar() {
 
   const user = useUser();
 
-  const handleLogoutClick = async (e) => {
+  const handleLogoutClick = async (e: Event) => {
     e.preventDefault();
 
     const result = await axios({
