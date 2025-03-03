@@ -120,12 +120,11 @@ const sampleGiveDeviceData = [
 
 
 const addProducts = async (data, sampleSellDeviceData, sampleGiveData) => {
-  await productModel.deleteMany();
-  await sellDeviceModel.deleteMany();
-  await giveDevice.deleteMany();
-  data.forEach(async (d) => {
-    await productModel.create(d);
-  });
+  await productModel.deleteMany({});
+  await sellDeviceModel.deleteMany({});
+  await giveDevice.deleteMany({});
+  
+  await productModel.insertMany(data);
 
   await sellDeviceModel.insertMany(sampleSellDeviceData);
 
