@@ -24,7 +24,7 @@ EcoGadget is a platform designed to promote responsible e-waste management by en
 
 
 ### Images
-![Vector_Search1](https://freeimage.host/i/33Bncts)
+![Vector_Search1](https://pasteboard.co/TleVfuNi0El0.jpg)
 ![Vector_Search2](https://freeimage.host/i/33BoTzu)
 
 
