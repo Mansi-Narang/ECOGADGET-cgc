@@ -507,7 +507,7 @@ export default function AdminDashboard() {
                         </TableRow>
                       </TableHeader>
                       <TableBody>
-                        {logisticPartners.map((partner) => (
+                        {logisticPartners.map((partner: LogisticsPartner) => (
                           <TableRow key={partner.id}>
                             <TableCell className="font-medium">{partner.name}</TableCell>
                             <TableCell className="text-right">{partner.rating}/5.0</TableCell>
@@ -530,8 +530,8 @@ export default function AdminDashboard() {
                   <CardContent>
                     <div className="space-y-4">
                       {sellingRequests
-                        .filter((r) => r.status === "pending")
-                        .map((request) => (
+                        .filter((r: SellingRequest) => r.status === "Pending")
+                        .map((request: SellingRequest) => (
                           <div key={request.id} className="flex items-center justify-between rounded-lg border p-4">
                             <div>
                               <h3 className="font-medium">{request.device}</h3>
