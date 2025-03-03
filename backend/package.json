@@ -30,14 +30,12 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
-    "-": "^0.0.1",
     "@google/generative-ai": "^0.22.0",
     "@sendgrid/mail": "^8.1.4",
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^5.1.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
-    "D": "^1.0.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
