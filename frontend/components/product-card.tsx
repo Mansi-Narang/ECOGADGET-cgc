@@ -28,13 +28,6 @@ export function ProductCard({
 }: ProductCardProps) {
   const [isSaved, setIsSaved] = useState(false);
 
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-  //   script.async = true;
-  //   document.body.appendChild(script);
-  // }, []);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
