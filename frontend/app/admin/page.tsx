@@ -53,7 +53,9 @@ import type { Product, SellingRequest, LogisticsPartner } from "@/lib/type"
 interface ProductInterface {
   stock: number,
   productName: string,
-  id: string
+  id: string,
+  productType: string,
+  price: number
 }
 
 export default function AdminDashboard() {
