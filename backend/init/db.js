@@ -3,23 +3,8 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const productModel = require("../models/ProductModel");
 const sellDeviceModel = require("../models/SellDevice.js");
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-const geminiApiKey = "AIzaSyAzeIq20O7VzIASVTiXIljz9fzYBFnXEvk";
-
-const arrData = require("./data.js");
-
-const genAi = new GoogleGenerativeAI(geminiApiKey);
-const model = genAi.getGenerativeModel({ model: "text-embedding-004" });
-
-const connectDB = async (e) => {
-  await mongoose.connect(
-    "mongodb+srv://mansinarang155:u2JHh311Y4QHqC2m@ecogadgetdb.0kel3.mongodb.net/?retryWrites=true&w=majority&appName=ecogadgetdb"
-  );
-};
-
-(async () => {
-  await connectDB();
-})();
+const model = require("../utils/textEmbeddingModel.js");
+const getEmbedding = require("../utils/getEmbedding.js");
 
 const sampleSellDeviceData = [
   {
@@ -87,14 +72,8 @@ const addProducts = async (data, sampleSellDeviceData) => {
   console.log("data added");
 };
 
-async function getEmbedding(content) {
-  const embedding = await model.embedContent(content);
-  return embedding.embedding.values;
-}
-
 const addEmbeddings = async () => {
   const data = await productModel.find({});
-  let cnt = 0;
   data.forEach(async (d, idx) => {
     const embedding = await getEmbedding(d.productName + "\n" + d.description);
     const id = d._id;
@@ -108,10 +87,9 @@ const addEmbeddings = async () => {
       },
       { upsert: true }
     );
-    cnt++;
   });
 
-  console.log("Embeddings are being added...");
+  console.log("Embeddings are added");
 };
 
 async function createVectorSearchIndex() {
@@ -168,7 +146,10 @@ async function performVectorSearch(userQuery, filter = {}) {
   return await productModel.aggregate(pipeline);
 }
 
-let fetchRes = async () => {
-  let res = await performVectorSearch("I wish to buy a samsung device");
-  console.log(res);
-};
+function dbInitializer() {
+  const arrData = require("./data.js");
+  addProducts(arrData, sampleSellDeviceData);
+  addEmbeddings();
+}
+
+module.exports = dbInitializer;

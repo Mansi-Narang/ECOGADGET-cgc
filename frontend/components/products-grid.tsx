@@ -35,6 +35,8 @@ export function ProductsGrid() {
    const fetchProducts = async() => {
         const productsList = await axios.get('http://localhost:4000/products');
         setProducts(productsList.data.products);
+
+        console.log(products);
         setLoading(false);
     }
     fetchProducts();
