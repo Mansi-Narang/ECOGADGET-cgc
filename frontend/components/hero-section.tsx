@@ -45,11 +45,11 @@ export function HeroSection({ sectionRef, learnMoreRef }: PropsTypes) {
   ]
 
   const handleScroll = () => {
-    sectionRef.current.scrollIntoView({ behaviour: "smooth" });
+    sectionRef?.current?.scrollIntoView({ behavior: "smooth" });
   }
 
   const handleLearnMoreScroll = () => {
-    learnMoreRef.current.scrollIntoView({ behaviour: "smooth" });
+    learnMoreRef?.current?.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
