@@ -28,6 +28,8 @@ export type Product = {
     decision?: "refurbish" | "recycle" | "reject"
     logisticsPartner?: number
     notes?: string
+    model: string
+    askingPrice: number
   }
   
   export type LogisticsPartner = {

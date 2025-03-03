@@ -436,7 +436,7 @@ export default function AdminDashboard() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {sellingRequests.map((request) => (
+                      {sellingRequests.map((request: SellingRequest) => (
                         <TableRow key={request.id}>
                           <TableCell className="font-medium">{request.user}</TableCell>
                           <TableCell>{request.model}</TableCell>
