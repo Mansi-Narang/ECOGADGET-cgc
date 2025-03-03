@@ -377,7 +377,7 @@ export default function AdminDashboard() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {products.map((product) => (
+                      {products.map((product: ProductInterface) => (
                         <TableRow key={product.id}>
                           <TableCell className="font-medium">{product.productName}</TableCell>
                           <TableCell>{product.productType}</TableCell>
