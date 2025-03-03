@@ -85,7 +85,7 @@ export default function RentPage() {
 
     fetchDevice();
     
-  },[]);
+  });
 
 
   if (loading) {

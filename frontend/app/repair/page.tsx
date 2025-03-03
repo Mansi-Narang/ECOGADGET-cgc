@@ -1,6 +1,4 @@
 'use client'
-
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { NavBar } from "@/components/nav-bar"
 import { RepairForm } from "@/components/repair-form"

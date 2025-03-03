@@ -19,7 +19,6 @@ import axios from "axios"
 import Swal from "sweetalert2"
 
 export function RepairForm() {
-  const [partsOption, setPartsOption] = useState("need-parts");
 
   const [formData, setFormData] = useState({
     deviceType: '',

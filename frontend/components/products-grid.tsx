@@ -40,7 +40,7 @@ export function ProductsGrid() {
         setLoading(false);
     }
     fetchProducts();
-  }, []);
+  });
   return (
     <div className='flex flex-col'>
     
