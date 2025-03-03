@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -28,15 +28,11 @@ export function TechnicianApplicationForm() {
     }))
   }
 
-  const handleFileUpload = (e) => {
-    const file = e.target.files[0]
-    setFormData(prevState => ({
-      ...prevState,
-      resume: file
-    }))
+  const handleFileUpload = () => {
+      return;
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     const result = await axios({

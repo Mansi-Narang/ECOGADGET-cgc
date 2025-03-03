@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 import Swal from "sweetalert2";
 import axios from "axios"
 
@@ -30,7 +30,7 @@ export function ContactSection() {
     });
   }
 
-  const handleSubmit = async(e)=>{
+  const handleSubmit = async(e: FormEvent)=>{
     e.preventDefault();
     if(!formData.firstName || !formData.lastName || !formData.email || !formData.subject || !formData.message){
       Swal.fire({

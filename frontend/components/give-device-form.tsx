@@ -39,14 +39,15 @@ export function GiveDeviceForm() {
     }))
   }
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setFormData((prevState) => ({
-        ...prevState,
-        deviceImages: Array.from(e.target.files as FileList),
-      }))
-    }
+  const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
   }
+
+  const handleFileUpload = () => { return; }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -116,7 +117,7 @@ export function GiveDeviceForm() {
           id="description"
           name="description"
           value={formData.description}
-          onChange={handleInputChange}
+          onChange={handleTextChange}
           required
         />
       </div>
