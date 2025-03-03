@@ -35,7 +35,7 @@ export default function RentPage() {
   const [loading, setLoading] = React.useState(true)
   const [selectedImage, setSelectedImage] = React.useState(0)
   const [agreed, setAgreed] = React.useState(false)
-  const [razorpayLoaded, setRazorpayLoaded] = React.useState<Boolean>(false);
+  const [razorpayLoaded, setRazorpayLoaded] = React.useState<boolean>(false);
 
   const { deviceId } = useParams();
 
