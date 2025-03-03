@@ -113,8 +113,11 @@ export function FeaturedDeals({ sectionRef }) {
                             "callback_url": "/orders"
                           };
 
-                          const rzp1 = new window.Razorpay(options);
-                          rzp1.open();
+                          if(typeof window != 'undefined' && 'Razorpay' in window) {
+                            const RazorpayConstructor = (window as any).Razorpay;
+                            const rzp1 = new RazorpayConstructor(options);
+                            rzp1.open();
+                          }
                         }}
                     >
                       Buy Now

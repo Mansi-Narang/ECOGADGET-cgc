@@ -41,6 +41,7 @@ export default function RentPage() {
   const [deviceData, setDeviceData] = React.useState<DeviceData | null>(null);
 
   const handleRentClick = async (e: Event) => {
+
     let amount: string | number = deviceData!.dailyRate!;
     if (typeof amount != 'number') amount = parseFloat(amount);
     amount += (32 / 100) * amount;
@@ -59,7 +60,6 @@ export default function RentPage() {
 
     const response = result.data;
 
-
     const options = {
       "key": response.key,
       "amount": response.amount,
@@ -68,8 +68,12 @@ export default function RentPage() {
       "order_id": response.id,
       "callback_url": "http://localhost:3000/orders",
     };
-    const rzp1 = new window.Razorpay(options);
-    rzp1.open();
+
+    if (typeof window !== 'undefined' && 'Razorpay' in window) {
+      const RazorpayConstructor = (window as any).Razorpay;
+      const rzp1 = new RazorpayConstructor(options);
+      rzp1.open();
+    }
 
     e.preventDefault();
   }

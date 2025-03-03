@@ -30,12 +30,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="beforeInteractive" />
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <AuthProvider>{children}</AuthProvider>
-        </body>
       </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   );
 }
