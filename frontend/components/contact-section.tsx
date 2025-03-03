@@ -47,7 +47,7 @@ export function ContactSection() {
       });
     }
 
-    const response = await axios.post("http://localhost:4000/contact", formData);
+    const response = await axios.post("https://ecogadget.onrender.com/contact", formData);
     if(response.data.success){
       Swal.fire({
         toast: true,

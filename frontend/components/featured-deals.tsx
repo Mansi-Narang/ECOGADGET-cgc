@@ -101,7 +101,7 @@ export function FeaturedDeals({ sectionRef }) {
                           amount = amount.split(".")[0] + amount.split(".")[1];
                           amount = Number(amount);
 
-                          const response1 = await axios.post("http://localhost:4000/orders/create", {
+                          const response1 = await axios.post("https://ecogadget.onrender.com/orders/create", {
                             amount, currency: "INR"
                           });
 

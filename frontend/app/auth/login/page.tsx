@@ -43,7 +43,7 @@ export default function LoginPage() {
 
     const response = await axios({
       method: "post",
-      url: "http://localhost:4000/login",
+      url: "https://ecogadget.onrender.com/login",
       data: { emailOrUsername, password },
       withCredentials: true
     });

@@ -53,7 +53,7 @@ export function GiveDeviceForm() {
 
     const result = await axios({
       method: "post",
-      url: 'http://localhost:4000/borrow/give',
+      url: 'https://ecogadget.onrender.com/borrow/give',
       data: formData
     });
 
