@@ -19,7 +19,7 @@ const repairModel = require("./models/Repair");
 const technician = require("./models/Technician");
 const giveDevice = require("./models/GiveDevice");
 const productModel = require("./models/ProductModel");
-const vectorSearch = require("./utils/vectorSearch");
+const vectorSearch = require("./utils/vectorsearch");
 const dbInitializer = require("./init/db");
 
 sgMail.setApiKey(process.env.SG_KEY);
