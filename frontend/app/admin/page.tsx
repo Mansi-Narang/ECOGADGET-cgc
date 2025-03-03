@@ -251,7 +251,7 @@ export default function AdminDashboard() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">
-                    {sellingRequests.filter((r) => r.status === "Pending").length}
+                    {sellingRequests.filter((r: any) => r.status === "Pending").length}
                   </div>
                   <p className="text-xs text-muted-foreground">+5 since last week</p>
                 </CardContent>
