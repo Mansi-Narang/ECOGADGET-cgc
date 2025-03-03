@@ -29,6 +29,7 @@ type DeviceData = {
   availableTo: string
   termsAgreed: boolean
   deviceImages: string[]
+  images: string[]
 }
 
 export default function RentPage() {
@@ -40,7 +41,7 @@ export default function RentPage() {
 
   const [deviceData, setDeviceData] = React.useState<DeviceData | null>(null);
 
-  const handleRentClick = async (e: Event) => {
+  const handleRentClick = async (e: React.MouseEvent) => {
 
     let amount: string | number = deviceData!.dailyRate!;
     if (typeof amount != 'number') amount = parseFloat(amount);
@@ -130,14 +131,14 @@ export default function RentPage() {
           <div className="space-y-4">
             <div className="relative aspect-square overflow-hidden rounded-lg border">
               <Image
-                src={deviceData.images[selectedImage] || "/placeholder.svg"}
-                alt={deviceData.deviceName}
+                src={deviceData!.images![selectedImage] || "/placeholder.svg"}
+                alt={deviceData!.deviceName}
                 fill
                 className="object-cover"
               />
             </div>
             <div className="grid grid-cols-4 gap-2">
-              {deviceData.images.map((image, index) => (
+              {deviceData!.images.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
@@ -148,7 +149,7 @@ export default function RentPage() {
                 >
                   <Image
                     src={image || "/placeholder.svg"}
-                    alt={`${deviceData.deviceName} thumbnail ${index + 1}`}
+                    alt={`${deviceData!.deviceName} thumbnail ${index + 1}`}
                     fill
                     className="object-cover"
                   />
@@ -158,19 +159,19 @@ export default function RentPage() {
           </div>
           <div className="space-y-6">
             <div>
-              <h1 className="text-3xl font-bold">{deviceData.deviceName}</h1>
+              <h1 className="text-3xl font-bold">{deviceData!.deviceName}</h1>
               <div className="mt-2 flex items-center gap-2">
-                <Badge variant="secondary">{deviceData.deviceType}</Badge>
-                <Badge variant="outline">{deviceData.location}</Badge>
+                <Badge variant="secondary">{deviceData!.deviceType}</Badge>
+                <Badge variant="outline">{deviceData!.location}</Badge>
               </div>
             </div>
 
-            <p className="text-lg text-muted-foreground">{deviceData.description}</p>
+            <p className="text-lg text-muted-foreground">{deviceData!.description}</p>
 
             <div className="space-y-4 rounded-lg border p-4">
               <div className="flex items-center justify-between">
                 <span className="text-muted-foreground">Daily Rate</span>
-                <span className="text-xl font-bold">₹ {deviceData.dailyRate}</span>
+                <span className="text-xl font-bold">₹ {deviceData!.dailyRate}</span>
               </div>
               <span className="text-muted-foreground ml-[375px]">excluding 30% Security fee</span>
               <span className="text-muted-foreground ml-[375px]"> + 2% Platform fee</span>
@@ -196,11 +197,11 @@ export default function RentPage() {
               <div className="grid grid-cols-2 gap-2 text-sm">
                 <div>
                   <span className="text-muted-foreground">Available From</span>
-                  <p>{format(new Date(deviceData.availableFrom), "PPP")}</p>
+                  <p>{format(new Date(deviceData!.availableFrom), "PPP")}</p>
                 </div>
                 <div>
                   <span className="text-muted-foreground">Available To</span>
-                  <p>{format(new Date(deviceData.availableTo), "PPP")}</p>
+                  <p>{format(new Date(deviceData!.availableTo), "PPP")}</p>
                 </div>
               </div>
             </div>
