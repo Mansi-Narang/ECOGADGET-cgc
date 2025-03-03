@@ -19,6 +19,18 @@ import ProtectedRoute from "@/context/ProtectedRoute"
 
 const images = [iphone,sam, mac];
 
+type DeviceData = {
+  dailyRate: string
+  deviceName: string
+  description: string
+  deviceType: string
+  location: string
+  availableFrom: string
+  availableTo: string
+  termsAgreed: boolean
+  deviceImages: any[]
+}
+
 export default function RentPage() {
   const [loading, setLoading] = React.useState(true)
   const [selectedImage, setSelectedImage] = React.useState(0)
@@ -26,7 +38,7 @@ export default function RentPage() {
 
   const { deviceId } = useParams();
 
-  const [deviceData, setDeviceData] = React.useState(null);
+  const [deviceData, setDeviceData] = React.useState<DeviceData | null>(null);
 
   const handleRentClick = async(e: Event) => {
     let amount = deviceData?.dailyRate;
