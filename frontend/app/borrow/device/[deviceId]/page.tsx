@@ -20,7 +20,7 @@ import ProtectedRoute from "@/context/ProtectedRoute"
 const images = [iphone,sam, mac];
 
 type DeviceData = {
-  dailyRate: string
+  dailyRate: number
   deviceName: string
   description: string
   deviceType: string
@@ -28,7 +28,7 @@ type DeviceData = {
   availableFrom: string
   availableTo: string
   termsAgreed: boolean
-  deviceImages: any[]
+  deviceImages: string[]
 }
 
 export default function RentPage() {
@@ -41,8 +41,8 @@ export default function RentPage() {
   const [deviceData, setDeviceData] = React.useState<DeviceData | null>(null);
 
   const handleRentClick = async(e: Event) => {
-    let amount = deviceData?.dailyRate;
-    amount = parseFloat(amount);
+    let amount: string | number = deviceData?.dailyRate!;
+    if(typeof amount != 'number') amount = parseFloat(amount);
     amount += (32/100) * amount;
     amount = amount.toFixed(2).toString();
     
