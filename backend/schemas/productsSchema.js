@@ -52,7 +52,7 @@ const productSchema = new Schema({
 });
 
 productSchema.pre('save', async function(next) {
-    this.embedding = await getEmbedding(this.productName + '\n' + this.description);
+    this.embedding = await getEmbedding(this.productName + '\n' + this.description + '\n' + d.price);
     next();
 });
 

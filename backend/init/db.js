@@ -123,7 +123,7 @@ const addProducts = async (data, sampleSellDeviceData, sampleGiveData) => {
   await productModel.deleteMany({});
   await sellDeviceModel.deleteMany({});
   await giveDevice.deleteMany({});
-  
+
   await productModel.insertMany(data);
 
   await sellDeviceModel.insertMany(sampleSellDeviceData);
@@ -136,7 +136,7 @@ const addProducts = async (data, sampleSellDeviceData, sampleGiveData) => {
 const addEmbeddings = async () => {
   const data = await productModel.find({});
   data.forEach(async (d, idx) => {
-    const embedding = await getEmbedding(d.productName + "\n" + d.description);
+    const embedding = await getEmbedding(d.productName + "\n" + d.description + "\n" + d.price);
     const id = d._id;
 
     await productModel.updateOne(
@@ -209,8 +209,9 @@ async function performVectorSearch(userQuery, filter = {}) {
 
 async function dbInitializer() {
   const arrData = require("./data.js");
-  addProducts(arrData, sampleSellDeviceData, sampleGiveDeviceData);
-  addEmbeddings();
+  await addProducts(arrData, sampleSellDeviceData, sampleGiveDeviceData);
+  await addEmbeddings();
+  await vectorSearchIndex();
 }
 
 module.exports = dbInitializer;
