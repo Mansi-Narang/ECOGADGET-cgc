@@ -249,12 +249,6 @@ export default function AdminDashboard() {
                   <CardTitle className="text-sm font-medium">Pending Requests</CardTitle>
                   <ClipboardList className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold">
-                    {sellingRequests.filter((r: any) => r.status === "Pending").length}
-                  </div>
-                  <p className="text-xs text-muted-foreground">+5 since last week</p>
-                </CardContent>
               </Card>
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
