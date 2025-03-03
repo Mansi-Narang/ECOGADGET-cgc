@@ -209,8 +209,19 @@ async function performVectorSearch(userQuery, filter = {}) {
 
 async function dbInitializer() {
   const arrData = require("./data.js");
-  addProducts(arrData, sampleSellDeviceData, sampleGiveDeviceData);
-  addEmbeddings();
+  await addProducts(arrData, sampleSellDeviceData, sampleGiveDeviceData);
+  await addEmbeddings();
+  await vectorSearchIndex().then(() => {
+    console.log("Vector Index Added");
+  }).catch((e) => {
+    if(e.code === 68) {
+      console.log("Index already exists");
+    } else {
+      console.error(e);
+    }
+  });
+
+  console.log("Database has been initialized");
 }
 
 module.exports = dbInitializer;

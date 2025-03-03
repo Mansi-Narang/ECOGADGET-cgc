@@ -31,42 +31,7 @@ const connectDb = async () => {
 connectDb()
   .then(async () => {
     console.log("Mongo DB connected!");
-
     await dbInitializer();
-    async function createVectorSearchIndex() {
-      const model = {
-        name: "vector_index",
-        type: "vectorSearch",
-        definition: {
-          fields: [
-            {
-              type: "vector",
-              path: "embedding",
-              numDimensions: 768,
-              similarity: "cosine",
-            },
-          ],
-        },
-      };
-
-      await productModel.createSearchIndex(model);
-    }
-
-    let vectorSearchIndex = async () => {
-      await createVectorSearchIndex();
-    };
-
-    vectorSearchIndex()
-      .then(() => {
-        console.log("Vector Search Index Initiated");
-      })
-      .catch((e) => {
-        if (e.codeName === "IndexAlreadyExists" && e.code === 68) {
-          console.log("Vector Search Index Already Created");
-        } else {
-          console.log(e.message);
-        }
-      });
   })
   .catch((e) => {
     console.log(`error: ${e}`);
