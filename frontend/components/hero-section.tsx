@@ -4,8 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { ArrowRight, Recycle, DollarSign, Clock, Shield } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { useRef } from "react"
-const eco2 = require("./eco2.png");
+import eco2 from './eco2.png';
 
 
 export function HeroSection({ sectionRef, learnMoreRef }) {

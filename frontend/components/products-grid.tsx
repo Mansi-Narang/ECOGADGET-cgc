@@ -4,15 +4,10 @@ import { motion } from 'framer-motion'
 import { ProductCard } from './product-card'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
-import { ProductList } from './product-list';
-import Link from 'next/link';
-// const iphone13 = require("./iphone13.png");
-// const macbook = require("./macbookm1.png");
-// const samsungs21 = require("./samsungs21.png");
 
 
 export function ProductsGrid() {
-  let [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const [searchText, setSearchText] = useState("");

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { MapPin, Calendar, Clock } from 'lucide-react'
@@ -32,14 +32,11 @@ export function BorrowItemsList() {
         to: '2025-02-20'
       }
     },
-    // Add more items...
   ])
 
   const getUserLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        // Here you would typically reverse geocode the coordinates
-        // to get the actual address
         console.log(position.coords)
       })
     }

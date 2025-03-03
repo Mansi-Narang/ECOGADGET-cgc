@@ -2,14 +2,11 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { Calendar } from "lucide-react"
 import { format } from "date-fns"
 import axios from 'axios';
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Calendar as CalendarComponent } from "@/components/ui/calendar"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Badge } from "@/components/ui/badge"
@@ -25,7 +22,6 @@ const images = [iphone,sam, mac];
 export default function RentPage() {
   const [loading, setLoading] = React.useState(true)
   const [selectedImage, setSelectedImage] = React.useState(0)
-  const [date, setDate] = React.useState<Date>()
   const [agreed, setAgreed] = React.useState(false)
 
   const { deviceId } = useParams();
@@ -51,7 +47,6 @@ export default function RentPage() {
 
     const response = result.data;
 
-    console.log(response);
 
     const options = {
       "key": response.key,
@@ -92,22 +87,6 @@ export default function RentPage() {
     
   },[]);
 
-  // const deviceData = {
-  //   deviceName: "Eco-Friendly Solar Power Bank",
-  //   description:
-  //     "High-capacity solar power bank with dual USB ports and wireless charging capability. Perfect for outdoor activities and eco-conscious users.",
-  //   deviceType: "Portable Charger",
-  //   dailyRate: "$5.99",
-  //   location: "San Francisco, CA",
-  //   availableFrom: "2024-02-25",
-  //   availableTo: "2024-12-31",
-  //   deviceImages: [
-  //     "/placeholder.svg?height=600&width=600",
-  //     "/placeholder.svg?height=600&width=600",
-  //     "/placeholder.svg?height=600&width=600",
-  //     "/placeholder.svg?height=600&width=600",
-  //   ],
-  // }
 
   if (loading) {
     return (
@@ -186,28 +165,6 @@ export default function RentPage() {
             <span className="text-muted-foreground ml-[375px]">excluding 30% Security fee</span>
             <span className="text-muted-foreground ml-[375px]"> + 2% Platform fee</span>
 
-            {/* <div className="space-y-2">
-              <label className="text-sm text-muted-foreground">Select Rental Date</label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button variant="outline" className="w-full justify-start text-left font-normal">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    {date ? format(date, "PPP") : <span>Pick a date</span>}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
-                  <CalendarComponent
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                    initialFocus
-                    disabled={(date) =>
-                      date < new Date(deviceData.availableFrom) || date > new Date(deviceData.availableTo)
-                    }
-                  />
-                </PopoverContent>
-              </Popover>
-            </div> */}
 
             <div className="flex items-start space-x-2">
               <Checkbox id="terms" checked={agreed} onCheckedChange={(checked) => setAgreed(checked as boolean)} />

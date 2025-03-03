@@ -7,7 +7,6 @@ import {
   Package,
   Headphones,
   Settings,
-  LogOut,
 } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -25,18 +24,9 @@ import axios from "axios";
 import { useUser } from "../context/AuthContext.jsx";
 import Swal from "sweetalert2";
 
-export function NavBar({ showSearch }) {
+export function NavBar() {
   const dropdownRef = useRef(null);
   const [showAuthOptions, setShowAuthOptions] = useState(false);
-  const [searchInput, setSearchInput] = useState("");
-
-  const handleSearch = async(e) => {
-    e.preventDefault();
-
-    if(!searchInput.length) {
-      return;
-    }
-  }
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -100,21 +90,6 @@ export function NavBar({ showSearch }) {
               </Link>
             </NavigationMenuItem>
 
-            {/* <NavigationMenuItem>
-              <NavigationMenuTrigger>Buy</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="grid gap-3 p-6 w-[400px] md:w-[500px] lg:w-[600px]">
-                  <Link href="/buy/refurbished" className="group grid gap-1 p-4 hover:bg-muted rounded-lg">
-                    <div className="font-medium">Refurbished Gadgets</div>
-                    <div className="text-sm text-muted-foreground">Quality-tested devices at great prices</div>
-                  </Link>
-                  <Link href="/buy/parts" className="group grid gap-1 p-4 hover:bg-muted rounded-lg">
-                    <div className="font-medium">Spare Parts</div>
-                    <div className="text-sm text-muted-foreground">Components for repairs and upgrades</div>
-                  </Link>
-                </div>
-              </NavigationMenuContent>
-            </NavigationMenuItem> */}
 
             <NavigationMenuItem>
               <Link href="/sell" legacyBehavior passHref>
@@ -124,21 +99,7 @@ export function NavBar({ showSearch }) {
               </Link>
             </NavigationMenuItem>
 
-            {/* <NavigationMenuItem>
-              <NavigationMenuTrigger>Sell</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="grid gap-3 p-6 w-[400px] md:w-[500px] lg:w-[600px]">
-                  <Link href="/sell/device" className="group grid gap-1 p-4 hover:bg-muted rounded-lg">
-                    <div className="font-medium">Sell Your Device</div>
-                    <div className="text-sm text-muted-foreground">Get the best value for your gadgets</div>
-                  </Link>
-                  <Link href="/sell/bulk" className="group grid gap-1 p-4 hover:bg-muted rounded-lg">
-                    <div className="font-medium">Bulk Sales</div>
-                    <div className="text-sm text-muted-foreground">Perfect for businesses and organizations</div>
-                  </Link>
-                </div>
-              </NavigationMenuContent>
-            </NavigationMenuItem> */}
+            
             <NavigationMenuItem>
               <NavigationMenuTrigger>Borrow</NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -164,13 +125,7 @@ export function NavBar({ showSearch }) {
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
-            {/* <NavigationMenuItem>
-              <Link href="/repair" legacyBehavior passHref>
-                <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                  Repair
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem> */}
+            
 
             <NavigationMenuItem>
               <NavigationMenuTrigger>Repair</NavigationMenuTrigger>
@@ -297,10 +252,7 @@ export function NavBar({ showSearch }) {
                         <Package className="h-5 w-5" />
                         <Link href="/orders">Your Orders</Link>
                       </Link>
-                      {/* <Link href="/payments" className="flex items-center space-x-3 text-sm hover:text-green-600">
-                        <CreditCard className="h-5 w-5" />
-                        <span>Payment Methods</span>
-                      </Link> */}
+                      
                     </div>
                   </div>
                 </motion.div>

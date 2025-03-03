@@ -1,23 +1,18 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { NavBar } from "@/components/nav-bar"
 import { ProductsGrid } from "@/components/products-grid"
-import { FilterSidebar } from "@/components/filter-sidebar"
-import { useUser } from '@/context/AuthContext'
 import ProtectedRoute from '@/context/ProtectedRoute'
 
 
 export default function RefurbishedGadgetsPage() {
-  const [filters, setFilters] = useState({})
-  const user = useUser();
   
 
   return (
     <ProtectedRoute>
     <div className="min-h-screen bg-gray-50">
-      <NavBar showSearch={true} />
+      <NavBar  />
       <main className="container mx-auto py-8 px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

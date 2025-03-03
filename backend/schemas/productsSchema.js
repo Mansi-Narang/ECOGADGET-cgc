@@ -1,4 +1,5 @@
 const { Schema } = require("mongoose");
+const getEmbedding = require("../utils/getEmbedding");
 
 const productSchema = new Schema({
     productName: {
@@ -48,6 +49,11 @@ const productSchema = new Schema({
         required: false,
         default: 10
     }
+});
+
+productSchema.pre('save', async function(next) {
+    this.embedding = await getEmbedding(this.productName + '\n' + this.description);
+    next();
 });
 
 

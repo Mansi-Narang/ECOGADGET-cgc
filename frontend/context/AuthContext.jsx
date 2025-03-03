@@ -2,7 +2,6 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from 'axios';
-import Cookies from 'js-cookie';
 
 const AuthContext = createContext();
 
@@ -17,7 +16,6 @@ export const AuthProvider = ({ children }) => {
                     withCredentials: true,
                 });
 
-                console.log(result.data);
     
                 setUser(result?.data?.user);
             } catch(e) {

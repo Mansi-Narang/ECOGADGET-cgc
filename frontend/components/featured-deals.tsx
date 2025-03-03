@@ -4,9 +4,9 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
-const iphone13 = require("./iphone13.png");
-const macbook = require("./macbookm1.png");
-const samsungs21 = require("./samsungs21.png");
+import iphone13 from './iphone13.png';
+import macbook from './macbookm1.png';
+import samsung21 from './samsungs21.png';
 import axios from 'axios';
 import { Button } from '@/components/ui/button'
 import { useEffect } from "react"
@@ -35,7 +35,7 @@ const deals = [
     title: "Samsung Galaxy S21",
     price: 449,
     originalPrice: 699,
-    image: samsungs21,
+    image: samsung21,
     condition: "Good",
     warranty: "6 Months"
   }

@@ -9,11 +9,8 @@ import iphone13 from '@/components/iphone13.png';
 import samsung from '@/components/samsungs21.png';
 import m1 from '@/components/macbookm1.png';
 import { NavBar } from "@/components/nav-bar"
-import { useUser } from "@/context/AuthContext"
-import { useEffect } from "react"
 import ProtectedRoute from "@/context/ProtectedRoute";
 
-// Simulated order data using the products from your existing code
 const orders = [
   {
     id: "ORD-2024-001",

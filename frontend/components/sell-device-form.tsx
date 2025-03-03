@@ -77,7 +77,6 @@ export function SellDeviceForm() {
       condition: '',
       description: '',
       askingPrice: '',
-
     });
 
     return;
@@ -167,17 +166,6 @@ export function SellDeviceForm() {
         />
       </div>
 
-      {/* <div className="space-y-2">
-        <Label htmlFor="image">Images of your Product</Label>
-        <Input
-          id="image"
-          name="image"
-          type="file"
-          value={formData.image}
-          onChange={handleInputChange}
-          required
-        />
-      </div> */}
 
       <div className="space-y-2">
         <Label htmlFor="askingPrice">Asking Price (₹)</Label>

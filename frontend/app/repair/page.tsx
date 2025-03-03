@@ -5,11 +5,9 @@ import { motion } from 'framer-motion'
 import { NavBar } from "@/components/nav-bar"
 import { RepairForm } from "@/components/repair-form"
 import { TechnicianApplicationForm } from "@/components/technician-application-form"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Wrench, UserCircle } from 'lucide-react'
-import { useUser } from '@/context/AuthContext'
 import ProtectedRoute from '@/context/ProtectedRoute'
 
 export default function RepairPage() {

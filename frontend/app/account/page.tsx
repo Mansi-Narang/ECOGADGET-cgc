@@ -30,7 +30,6 @@ const ProfilePage = () => {
   };
 
   const handleSave = async () => {
-    // Here you would typically make an API call to update the user data
     setIsEditing(false);
     const updatedUser = await axios.post(
       "http://localhost:4000/updateUser",
@@ -42,7 +41,6 @@ const ProfilePage = () => {
   return (
     <ProtectedRoute>
       <div>
-        {/* Simple navigation bar instead of the imported component */}
         <header className="bg-white shadow-sm">
           <div className="container mx-auto p-4 flex justify-between items-center">
             <div className="font-bold text-xl">EcoGadget</div>

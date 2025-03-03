@@ -8,49 +8,13 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { StarIcon, MapPinIcon, CalendarIcon, Search } from "lucide-react"
+import { MapPinIcon, CalendarIcon, Search } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import mac from '@/components/macbookm1.png';
 import sam from '@/components/samsungs21.png';
 import iphone from '@/components/iphone13.png';
 import axios from 'axios';
 import Link from "next/link"
-
-// const devices = [
-//   {
-//     id: 1,
-//     name: "iPhone 12 Pro",
-//     images: [
-//       iphone
-//     ],
-//     description: "Latest iPhone model with advanced camera system and 5G capability.",
-//     price: 25,
-//     rating: 4.8,
-//     location: "New York, NY",
-//   },
-//   {
-//     id: 2,
-//     name: 'MacBook Pro 16"',
-//     images: [
-//       mac
-//     ],
-//     description: "Powerful laptop with Retina display and long battery life.",
-//     price: 50,
-//     rating: 4.9,
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     id: 3,
-//     name: "Sony A7 III",
-//     images: [
-//       sam
-//     ],
-//     description: "Full-frame mirrorless camera with excellent low-light performance.",
-//     price: 40,
-//     rating: 4.7,
-//     location: "Los Angeles, CA",
-//   },
-// ]
 
 const images = [iphone, sam, mac];
 
@@ -65,13 +29,13 @@ export function RentDeviceForm() {
   const [devices, setDevices] = useState<any[]>([]);
 
   useEffect(() => {
-    let fetchDevices = async() => {
+    const fetchDevices = async() => {
       const ds = await axios.get("http://localhost:4000/rent/devices");
 
       const result = ds.data;
-      result.devices.forEach((device: any) => {
+      result.devices.forEach((device) => {
         device.images = [images[Math.floor(Math.random() * images.length)]];
-        setDevices((prevData: any) => [...prevData, device]);
+        setDevices((prevData) => [...prevData, device]);
       });
     }
 
@@ -95,8 +59,6 @@ export function RentDeviceForm() {
 
   const handleSearch = (e) => {
     e.preventDefault()
-    // Implement search functionality here
-    console.log("Search params:", searchParams)
   }
 
   return (
@@ -192,10 +154,7 @@ export function RentDeviceForm() {
                 <CardTitle className="mb-2">{device.deviceName}</CardTitle>
                 <p className="text-sm text-gray-600 mb-4">{device.description}</p>
                 <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
-                  {/* <div className="flex items-center">
-                    <StarIcon className="w-4 h-4 text-yellow-400 mr-1" />
-                    <span>{device.rating}</span>
-                  </div> */}
+                  
                   <div className="flex items-center">
                     <MapPinIcon className="w-4 h-4 mr-1" />
                     <span>{device.location}</span>

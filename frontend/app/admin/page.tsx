@@ -75,15 +75,6 @@ export default function AdminDashboard() {
     fetchProducts();
   }, []);
 
-  // Sample data for demonstration
-//   const products: Product[] = [
-//     { id: 1, name: "iPhone 13 Pro", category: "Smartphones", price: 899, stock: 15, status: "Active" },
-//     { id: 2, name: "Samsung Galaxy S22", category: "Smartphones", price: 799, stock: 8, status: "Active" },
-//     { id: 3, name: "MacBook Air M2", category: "Laptops", price: 1199, stock: 5, status: "Active" },
-//     { id: 4, name: "Dell XPS 13", category: "Laptops", price: 999, stock: 0, status: "Out of Stock" },
-//     { id: 5, name: "iPad Pro 12.9", category: "Tablets", price: 1099, stock: 3, status: "Low Stock" },
-//   ]
-
 
   const logisticPartners: LogisticsPartner[] = [
     { id: 1, name: "EcoShip Express", rating: 4.8 },
@@ -94,12 +85,6 @@ export default function AdminDashboard() {
   const handleEditProduct = (product: Product) => {
     setSelectedProduct(product);
     setIsEditProductOpen(true);
-    // const updatedProduct = async(product)=>{
-    //   const products = await axios.post("http://localhost:4000/product/update", {product});
-    //   return products;
-    // }
-    // updatedProduct(product);
-    // setProducts({...product, products});
   }
 
   
@@ -429,8 +414,6 @@ export default function AdminDashboard() {
               </Card>
             </div>
           )}
-
-          {/* Selling Requests Tab */}
           {activeTab === "requests" && (
             <div className="grid gap-4">
               <div className="flex items-center justify-between">
@@ -508,8 +491,6 @@ export default function AdminDashboard() {
               </Card>
             </div>
           )}
-
-          {/* Logistics Tab */}
           {activeTab === "logistics" && (
             <div className="grid gap-4">
               <div className="flex items-center justify-between">
@@ -576,7 +557,6 @@ export default function AdminDashboard() {
         </main>
       </div>
 
-      {/* Add Product Dialog */}
       <Dialog open={isAddProductOpen} onOpenChange={setIsAddProductOpen}>
         <DialogContent className="sm:max-w-[600px]">
           <DialogHeader>
@@ -637,19 +617,6 @@ export default function AdminDashboard() {
                   </SelectContent>
                 </Select>
               </div>
-              {/* <div className="grid gap-2">
-                <Label htmlFor="status">Status</Label>
-                <Select defaultValue="active">
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select status" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="active">Active</SelectItem>
-                    <SelectItem value="draft">Draft</SelectItem>
-                    <SelectItem value="hidden">Hidden</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div> */}
             </div>
           </div>
           <DialogFooter>
@@ -661,7 +628,6 @@ export default function AdminDashboard() {
         </DialogContent>
       </Dialog>
 
-      {/* Edit Product Dialog */}
       <Dialog open={isEditProductOpen} onOpenChange={setIsEditProductOpen}>
         <DialogContent className="sm:max-w-[600px]">
           <DialogHeader>
@@ -723,20 +689,7 @@ export default function AdminDashboard() {
                     </SelectContent>
                   </Select>
                 </div>
-                {/* <div className="grid gap-2">
-                  <Label htmlFor="edit-status">Status</Label>
-                  <Select defaultValue={selectedProduct.status}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select status" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="Active">Active</SelectItem>
-                      <SelectItem value="Out of Stock">Out of Stock</SelectItem>
-                      <SelectItem value="Low Stock">Low Stock</SelectItem>
-                      <SelectItem value="Hidden">Hidden</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div> */}
+                
               </div>
             </div>
           )}
@@ -751,7 +704,6 @@ export default function AdminDashboard() {
         </DialogContent>
       </Dialog>
 
-      {/* Verify Request Dialog */}
       <Dialog open={isVerifyRequestOpen} onOpenChange={setIsVerifyRequestOpen}>
         <DialogContent className="sm:max-w-[600px]">
           <DialogHeader>
@@ -780,19 +732,7 @@ export default function AdminDashboard() {
                 <h3 className="font-medium mb-2">Device Description</h3>
                 <p className="text-sm border rounded-md p-3 bg-muted/50">{selectedRequest.description}</p>
               </div>
-              {/* <div>
-                <h3 className="font-medium mb-2">Device Images</h3>
-                <div className="flex gap-2 overflow-auto pb-2">
-                  {selectedRequest.images.map((image, index) => (
-                    <img
-                      key={index}
-                      src={image || "/placeholder.svg"}
-                      alt={`Device image ${index + 1}`}
-                      className="h-24 w-24 rounded-md object-cover border"
-                    />
-                  ))}
-                </div>
-              </div> */}
+              
               <div className="grid gap-2">
                 <Label htmlFor="decision">Decision</Label>
                 <Select>

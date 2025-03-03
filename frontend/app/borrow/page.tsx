@@ -1,13 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { NavBar } from "@/components/nav-bar"
 import { RentDeviceForm } from "@/components/rent-device-form"
 import { GiveDeviceForm } from "@/components/give-device-form"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
-import { useUser } from "@/context/AuthContext"
 import ProtectedRoute from "@/context/ProtectedRoute"
 
 const fadeInUp = {

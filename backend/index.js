@@ -19,7 +19,7 @@ const repairModel = require("./models/Repair");
 const technician = require("./models/Technician");
 const giveDevice = require("./models/GiveDevice");
 const productModel = require("./models/ProductModel");
-const vectorSearch = require("./utils/vectorsearch");
+const vectorSearch = require("./utils/vectorSearch");
 
 sgMail.setApiKey(process.env.SG_KEY);
 
@@ -64,8 +64,11 @@ let vectorSearchIndex = async() => {
 vectorSearchIndex().then(() => {
   console.log("Vector Search Index Initiated");
 }).catch((e) => {
-  console.log(e.message);
-  console.log("Error while creating search index.");
+  if(e.codeName === 'IndexAlreadyExists' && e.code === 68) {
+    console.log("Index Already Created");
+  } else {
+    console.log(e.message);
+  }
 });
 
 const store = MongoStore.create({
@@ -187,14 +190,12 @@ app.get('/user', async (req, res) => {
 app.get("/products/:id", async(req, res) => {
   const {id} = req.params;
   const product = await productModel.findById(id);
-  console.log(id, product);
   return res.json({product})
 })
 
 app.post("/updateUser", async(req,res) => {
   try{
   const user = req.body;
-  console.log(user);
   const response = await UserModel.findOneAndUpdate({ email: user.email }, {
     $set: {
       email: user.email,
@@ -204,7 +205,6 @@ app.post("/updateUser", async(req,res) => {
     }
   }, { upsert: true });
 
-  console.log(response);
   
   return res.json(response);
   }
@@ -216,7 +216,6 @@ app.post("/updateUser", async(req,res) => {
 app.post("/product/update", async(req, res) => {
   const { product } = req.body;
   const updatedProduct = await productModel.findByIdAndUpdate({_id : product._id}, product);
-  console.log(updatedProduct);
   return 
 })
 
@@ -353,7 +352,7 @@ app.post("/orders/create", async (req, res) => {
 
 app.get('/sell', async(req, res) => {
   const products = await sellDeviceModel.find();
-
+  
   return res.json({ products });
 });
 

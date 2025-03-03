@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { FormEvent, useState } from "react"
 import Swal from 'sweetalert2';
-import { useRouter } from "next/navigation";
 import axios from "axios";
 
 export default function LoginPage() {
@@ -17,8 +16,6 @@ export default function LoginPage() {
     emailOrUsername: "",
     password: ""
   });
-
-  const router = useRouter();
 
   const handleFormSubmit = async(e: FormEvent) => {
     e.preventDefault();

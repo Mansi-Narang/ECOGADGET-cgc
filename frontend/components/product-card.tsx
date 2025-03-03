@@ -10,8 +10,8 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation' // Import useRouter
 
 interface ProductCardProps {
-  id: string
-  title: string
+  _id: string
+  productName: string
   image: string
   price: number
   rating: number
@@ -29,7 +29,6 @@ export function ProductCard({
   warranty
 }: ProductCardProps) {
   const [isSaved, setIsSaved] = useState(false)
-  const router = useRouter(); // Initialize router
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -37,10 +36,6 @@ export function ProductCard({
     script.async = true;
     document.body.appendChild(script);
   }, []);
-
-  const handleBuyClick = async(e) => {
-    const result = await axios.post("http://localhost:4000/orders/create", { })
-  }
 
   return (
     <motion.div

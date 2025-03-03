@@ -4,9 +4,10 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Leaf, Recycle, Shield, Zap, BarChart, Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-const eco = require("./eco.png");
-const eco3 = require("./eco3.png");
-const eco4 = require("./eco4.png");
+import eco from './eco.png';
+import eco3 from './eco3.png';
+import eco4 from './eco4.png';
+
 
 export function AboutSection({ learnMoreRef }) {
   const stats = [
@@ -50,13 +51,11 @@ export function AboutSection({ learnMoreRef }) {
 
   return (
     <section ref={learnMoreRef} className="relative overflow-hidden bg-gradient-to-b from-green-50 via-white to-white py-24">
-      {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4ade8030_1px,transparent_1px),linear-gradient(to_bottom,#4ade8030_1px,transparent_1px)] bg-[size:14px_24px]" />
       </div>
 
       <div className="container px-4 mx-auto">
-        {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -132,8 +131,6 @@ export function AboutSection({ learnMoreRef }) {
             </div>
           </motion.div>
         </div>
-
-        {/* Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -160,7 +157,6 @@ export function AboutSection({ learnMoreRef }) {
           ))}
         </motion.div>
 
-        {/* Environmental Impact Banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
