@@ -42,7 +42,7 @@ export default function RentPage() {
     const result = await axios({
       method: "post",
       data: { amount, currency },
-      url: "http://localhost:4000/orders/create"
+      url: "https://ecogadget.onrender.com/orders/create"
     });
 
     const response = result.data;
@@ -74,7 +74,7 @@ export default function RentPage() {
     if(!deviceId) return;
 
     const fetchDevice = async() => {
-      const result = await axios.get(`http://localhost:4000/rent/devices/${deviceId}`);
+      const result = await axios.get(`https://ecogadget.onrender.com/rent/devices/${deviceId}`);
       const response = result.data;
 
       const { device } = response;

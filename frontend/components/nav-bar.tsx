@@ -50,7 +50,7 @@ export function NavBar() {
       method: "post",
       data: { user },
       withCredentials: true,
-      url: "http://localhost:4000/logout",
+      url: "https://ecogadget.onrender.com/logout",
     });
     const response = result.data;
 

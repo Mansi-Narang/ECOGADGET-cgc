@@ -13,7 +13,7 @@ export function ProductsGrid() {
   const [searchText, setSearchText] = useState("");
 
   const handleSearch = async (e) => {
-    const result = await axios.get(`http://localhost:4000/products/vectorSearch?q=${searchText}`);
+    const result = await axios.get(`https://ecogadget.onrender.com/products/vectorSearch?q=${searchText}`);
 
     const response = result.data.products;
 
@@ -33,7 +33,7 @@ export function ProductsGrid() {
 
   useEffect(()=>{
    const fetchProducts = async() => {
-        const productsList = await axios.get('http://localhost:4000/products');
+        const productsList = await axios.get('https://ecogadget.onrender.com/products');
         setProducts(productsList.data.products);
 
         console.log(products);

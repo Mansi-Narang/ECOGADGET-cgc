@@ -65,11 +65,11 @@ export default function AdminDashboard() {
 
   useEffect(()=>{
    const fetchProducts = async() => {
-        const productsList = await axios.get('http://localhost:4000/products');
+        const productsList = await axios.get('https://ecogadget.onrender.com/products');
         setProducts(productsList.data.products);
         setLoading(false);
 
-        const reqs = await axios.get('http://localhost:4000/sell');
+        const reqs = await axios.get('https://ecogadget.onrender.com/sell');
         setSellingRequests(reqs.data.products);
     }
     fetchProducts();
