@@ -18,8 +18,7 @@ export function SellDeviceForm() {
     model: '',
     condition: '',
     description: '',
-    askingPrice: '',
-    image: ''
+    askingPrice: ''
   })
 
   const handleInputChange = (e) => {
@@ -29,20 +28,6 @@ export function SellDeviceForm() {
       [name]: value
     }))
   }
-
-  const [file, setFile] = useState(null);
-  const [preview, setPreview] = useState(null);
-
-  const handleFileChange = (e) => {
-    const selectedFile = e.target.files[0];
-    setFile(selectedFile);
-
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setPreview(reader.result);
-    };
-    reader.readAsDataURL(selectedFile);
-  };
  
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,13 +49,11 @@ export function SellDeviceForm() {
         model: '',
         condition: '',
         description: '',
-        askingPrice: '',
-        image: ''
+        askingPrice: ''
       });
 
       return;
     }
-    if (!file) return alert("Please select a file");
     
     const result = await axios({
       method: "post",
@@ -94,7 +77,7 @@ export function SellDeviceForm() {
       condition: '',
       description: '',
       askingPrice: '',
-      image: ''
+
     });
 
     return;
@@ -184,7 +167,7 @@ export function SellDeviceForm() {
         />
       </div>
 
-      <div className="space-y-2">
+      {/* <div className="space-y-2">
         <Label htmlFor="image">Images of your Product</Label>
         <Input
           id="image"
@@ -194,7 +177,7 @@ export function SellDeviceForm() {
           onChange={handleInputChange}
           required
         />
-      </div>
+      </div> */}
 
       <div className="space-y-2">
         <Label htmlFor="askingPrice">Asking Price (₹)</Label>

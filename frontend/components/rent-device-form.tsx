@@ -189,13 +189,13 @@ export function RentDeviceForm() {
                 </Carousel>
               </CardHeader>
               <CardContent className="p-4 flex-grow">
-                <CardTitle className="mb-2">{device.name}</CardTitle>
+                <CardTitle className="mb-2">{device.deviceName}</CardTitle>
                 <p className="text-sm text-gray-600 mb-4">{device.description}</p>
                 <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <StarIcon className="w-4 h-4 text-yellow-400 mr-1" />
                     <span>{device.rating}</span>
-                  </div>
+                  </div> */}
                   <div className="flex items-center">
                     <MapPinIcon className="w-4 h-4 mr-1" />
                     <span>{device.location}</span>

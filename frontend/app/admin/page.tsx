@@ -61,11 +61,16 @@ export default function AdminDashboard() {
   let [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const [sellingRequests, setSellingRequests] = useState([]);
+
   useEffect(()=>{
    const fetchProducts = async() => {
         const productsList = await axios.get('http://localhost:4000/products');
         setProducts(productsList.data.products);
         setLoading(false);
+
+        const reqs = await axios.get('http://localhost:4000/sell');
+        setSellingRequests(reqs.data.products);
     }
     fetchProducts();
   }, []);
@@ -141,9 +146,9 @@ export default function AdminDashboard() {
               >
                 <ClipboardList className="mr-2 h-4 w-4" />
                 Selling Requests
-                <Badge className="ml-auto" variant="secondary">
+                {/* <Badge className="ml-auto" variant="secondary">
                   {sellingRequests.filter((r) => r.status === "Pending").length}
-                </Badge>
+                </Badge> */}
               </Button>
               <Button
                 variant={activeTab === "logistics" ? "secondary" : "ghost"}
@@ -450,7 +455,7 @@ export default function AdminDashboard() {
                         <TableHead>User</TableHead>
                         <TableHead>Device</TableHead>
                         <TableHead>Condition</TableHead>
-                        <TableHead>Date</TableHead>
+                        <TableHead>Asking Price</TableHead>
                         <TableHead>Status</TableHead>
                         <TableHead className="text-right">Actions</TableHead>
                       </TableRow>
@@ -459,9 +464,9 @@ export default function AdminDashboard() {
                       {sellingRequests.map((request) => (
                         <TableRow key={request.id}>
                           <TableCell className="font-medium">{request.user}</TableCell>
-                          <TableCell>{request.device}</TableCell>
+                          <TableCell>{request.model}</TableCell>
                           <TableCell>{request.condition}</TableCell>
-                          <TableCell>{request.date}</TableCell>
+                          <TableCell>{request.askingPrice}</TableCell>
                           <TableCell>
                             <Badge
                               variant={
@@ -487,7 +492,7 @@ export default function AdminDashboard() {
                 </CardContent>
                 <CardFooter className="flex items-center justify-between border-t p-4">
                   <div className="text-xs text-muted-foreground">
-                    Showing <strong>3</strong> of <strong>3</strong> requests
+                    Showing <strong>{ sellingRequests.length }</strong> of <strong>{ sellingRequests.length }</strong> requests
                   </div>
                   <div className="flex items-center gap-2">
                     <Button variant="outline" size="sm" disabled>
@@ -552,12 +557,12 @@ export default function AdminDashboard() {
                   <CardContent>
                     <div className="space-y-4">
                       {sellingRequests
-                        .filter((r) => r.status === "Pending")
+                        .filter((r) => r.status === "pending")
                         .map((request) => (
                           <div key={request.id} className="flex items-center justify-between rounded-lg border p-4">
                             <div>
                               <h3 className="font-medium">{request.device}</h3>
-                              <p className="text-sm text-muted-foreground">From: {request.user}</p>
+                              <p className="text-sm text-muted-foreground">From: Chandigarh</p>
                             </div>
                             <Button size="sm">Assign Pickup</Button>
                           </div>
@@ -775,7 +780,7 @@ export default function AdminDashboard() {
                 <h3 className="font-medium mb-2">Device Description</h3>
                 <p className="text-sm border rounded-md p-3 bg-muted/50">{selectedRequest.description}</p>
               </div>
-              <div>
+              {/* <div>
                 <h3 className="font-medium mb-2">Device Images</h3>
                 <div className="flex gap-2 overflow-auto pb-2">
                   {selectedRequest.images.map((image, index) => (
@@ -787,7 +792,7 @@ export default function AdminDashboard() {
                     />
                   ))}
                 </div>
-              </div>
+              </div> */}
               <div className="grid gap-2">
                 <Label htmlFor="decision">Decision</Label>
                 <Select>

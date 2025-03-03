@@ -118,7 +118,7 @@ export function FeaturedDeals({ sectionRef }) {
                             "currency": "INR",
                             "name": "EcoGadget",
                             "order_id": response1.data.id,
-                            "callback_url": "/checkout"
+                            "callback_url": "/orders"
                           };
 
                           const rzp1 = new window.Razorpay(options);
