@@ -50,6 +50,12 @@ import { Textarea } from "@/components/ui/textarea2"
 import { Label } from "@/components/ui/label2"
 import type { Product, SellingRequest, LogisticsPartner } from "@/lib/type"
 
+interface ProductInterface {
+  stock: number,
+  productName: string,
+  id: string
+}
+
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("overview")
   const [isAddProductOpen, setIsAddProductOpen] = useState(false)
@@ -329,8 +335,8 @@ export default function AdminDashboard() {
                     </TableHeader>
                     <TableBody>
                       {products
-                        .filter((p) => p.stock <= 5)
-                        .map((product) => (
+                        .filter((p: ProductInterface) => p.stock <= 5)
+                        .map((product: ProductInterface) => (
                           <TableRow key={product.id}>
                             <TableCell className="font-medium">{product.productName}</TableCell>
                             <TableCell className="text-right">{product.stock}</TableCell>
