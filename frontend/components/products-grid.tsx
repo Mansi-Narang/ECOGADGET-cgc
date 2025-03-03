@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ProductCard } from './product-card'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import axios from 'axios';
 
 
@@ -22,7 +22,7 @@ export function ProductsGrid() {
     });
   }
 
-  const handleChange = async(e) => {
+  const handleChange = async(e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
     setSearchText(() => {

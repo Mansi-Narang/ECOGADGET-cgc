@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from "framer-motion"
-import { useState } from "react"
+import { ChangeEvent, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -30,7 +30,7 @@ export function RepairForm() {
     address: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData((prevData) => {
       return { ...prevData, [e.target.name]: e.target.value }
     });

@@ -7,7 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { FormEvent, useState } from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useRouter } from "next/navigation";
@@ -53,7 +53,7 @@ export default function SignupPage() {
     return router.push(`/auth/login`);
   }
 
-  const handleChange = async (e) => {
+  const handleChange = async (e: ChangeEvent<HTMLInputElement>) => {
     setSignupData((prevVal) => {
       return { ...prevVal, [e.target.name]: e.target.value };
     });
