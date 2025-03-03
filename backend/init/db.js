@@ -211,7 +211,21 @@ async function dbInitializer() {
   const arrData = require("./data.js");
   await addProducts(arrData, sampleSellDeviceData, sampleGiveDeviceData);
   await addEmbeddings();
+<<<<<<< HEAD
   await vectorSearchIndex();
+=======
+  await vectorSearchIndex().then(() => {
+    console.log("Vector Index Added");
+  }).catch((e) => {
+    if(e.code === 68) {
+      console.log("Index already exists");
+    } else {
+      console.error(e);
+    }
+  });
+
+  console.log("Database has been initialized");
+>>>>>>> 80ddc978081f114f242ca56f7c44dd3f94bc0e9b
 }
 
 module.exports = dbInitializer;
