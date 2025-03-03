@@ -67,9 +67,9 @@ export function ProductCard({
         </div>
 
         <div className="flex gap-2">
-          <Button 
+          <Button
             className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-black" onClick={async (e) => {
-              if(!razorpayLoaded) {
+              if (!razorpayLoaded) {
                 console.error("Razorpay not Loaded");
                 return;
               }
@@ -91,9 +91,12 @@ export function ProductCard({
                 "order_id": response1.data.id,
                 "callback_url": "/orders"
               };
-
-              const rzp1 = new window.Razorpay(options);
-              rzp1.open();
+              if (!window.Razorpay) return;
+              let rzp1;
+              if (window.Razorpay) {
+                rzp1 = new window.Razorpay(options);
+                rzp1.open();
+              }
               e.preventDefault();
             }}>
             Buy Now
