@@ -9,6 +9,7 @@ import macbook from './macbookm1.png';
 import samsung21 from './samsungs21.png';
 import axios from 'axios';
 import { Button } from '@/components/ui/button'
+import * as React from 'react';
 
 const deals = [
   {
@@ -40,7 +41,11 @@ const deals = [
   }
 ]
 
-export function FeaturedDeals({ sectionRef }) {
+interface SectionProps {
+  sectionRef: React.RefObject<HTMLElement>
+}
+
+export function FeaturedDeals({ sectionRef }: SectionProps) {
 
   return (
     <section ref={sectionRef} className="p-20 bg-gray-50">

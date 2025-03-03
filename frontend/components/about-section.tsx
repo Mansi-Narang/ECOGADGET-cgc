@@ -7,9 +7,14 @@ import { Card, CardContent } from "@/components/ui/card"
 import eco from './eco.png';
 import eco3 from './eco3.png';
 import eco4 from './eco4.png';
+import * as React from 'react';
+
+interface SectionProps {
+  learnMoreRef: React.RefObject<HTMLElement>
+}
 
 
-export function AboutSection({ learnMoreRef }) {
+export function AboutSection({ learnMoreRef }: SectionProps ) {
   const stats = [
     {
       value: "Soon to be reflected",

@@ -5,9 +5,15 @@ import Image from "next/image"
 import { ArrowRight, Recycle, DollarSign, Clock, Shield } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import eco2 from './eco2.png';
+import React from "react"
+
+interface PropsTypes {
+  sectionRef: React.RefObject<HTMLElement>,
+  learnMoreRef: React.RefObject<HTMLElement>
+}
 
 
-export function HeroSection({ sectionRef, learnMoreRef }) {
+export function HeroSection({ sectionRef, learnMoreRef }: PropsTypes) {
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
