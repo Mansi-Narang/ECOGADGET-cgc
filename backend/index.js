@@ -351,6 +351,12 @@ app.post("/orders/create", async (req, res) => {
   return res.json(response);
 });
 
+app.get('/sell', async(req, res) => {
+  const products = await sellDeviceModel.find();
+
+  return res.json({ products });
+});
+
 app.post("/sell", async (req, res) => {
   const { deviceType, brand, model, condition ,description, askingPrice } = req.body;
 

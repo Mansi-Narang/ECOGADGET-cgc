@@ -29,7 +29,8 @@ const sellDeviceSchema = new Schema({
     },
     status: {
         type: String,
-        enum: ['pending', 'reject', 'refurbish', 'recycle']
+        enum: ['pending', 'reject', 'refurbish', 'recycle'],
+        default: 'pending'
     }
 });
 

@@ -172,5 +172,3 @@ let fetchRes = async () => {
   let res = await performVectorSearch("I wish to buy a samsung device");
   console.log(res);
 };
-
-vectorSearchIndex();

@@ -19,7 +19,7 @@ const data = [
     warranty: 24,
     rating: 4.8,
     stock: 78,
-    image: "https://images.unsplash.com/photo-1678911820864-e5cad1f0183a?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTZwTDPKTSdKqonQydW83mgROP0WjiwCdpF6Uh_eKKmCzI_ju4fxuaaIWFjjkFtALVjffwFRZ-NnTIWKjbl00BeaHGzSSkBdFKeGjbdmzZNxL3vLbi9yEUR&usqp=CAE",
     description:
       "The Galaxy S23 Ultra features Samsung's most advanced camera system with a 200MP main sensor, 100x Space Zoom, and enhanced Nightography. Powered by the Snapdragon 8 Gen 2 processor and a massive 5,000mAh battery, with S Pen integration for enhanced productivity.",
   },
@@ -31,7 +31,7 @@ const data = [
     warranty: 12,
     rating: 4.6,
     stock: 120,
-    image: "https://images.unsplash.com/photo-1618329340733-5b27c5f99aa6?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQhE2b_MEwQ20yHvi6Z2PGYL6MQdxiiHyrg9F5dCm6LhEZT1mBg7gzbqNffIBm2k_OfA7D4xcq6yzZzgz8awtLx7jd2fxVjBtbKv71jM0E&usqp=CAE",
     description:
       "Industry-leading noise cancellation powered by Sony's integrated V1 processor and eight microphones. Featuring 30-hour battery life, crystal-clear hands-free calling, and multipoint connection that lets you quickly switch between devices.",
   },
@@ -55,7 +55,7 @@ const data = [
     warranty: 12,
     rating: 4.7,
     stock: 65,
-    image: "https://images.unsplash.com/photo-1589739900243-4b52cd9b3581?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTn2GgqG2LYK48ug1ffwifvnQZlJM-yQb7T-S8gtxOxkfL5-ZxeFxcXyniBkuZFUiLErJL08VWcfu43VhL5vL9KfJaoBp2QkwW01DbGGAkU&usqp=CAE",
     description:
       "The ultimate iPad experience with the breakthrough M2 chip, an immersive 12.9-inch Liquid Retina XDR display, and ultrafast wireless connectivity. Perfect for creative professionals with Apple Pencil and Magic Keyboard support for enhanced productivity.",
   },
@@ -175,7 +175,7 @@ const data = [
     warranty: 24,
     rating: 4.6,
     stock: 70,
-    image: "https://images.unsplash.com/photo-1679332952952-14e4ee8394a4?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSJ8G2N92wzdzPv-92hJZAnstdnCjkYxfl0iDFCjr6gnX4PvdqnnN3CnsO-WKG9gmro3cipfNSG42n6R1eHnoLjPWlp95drbj3ID8jOvpF_TAGg9LJZnPxa&usqp=CAE",
     description:
       "Flagship performance with Snapdragon 8 Gen 2 processor and Hasselblad camera system featuring a 50MP main sensor. With a stunning 6.7-inch 120Hz AMOLED display, 100W SUPERVOOC fast charging, and OxygenOS for a smooth user experience.",
   },
@@ -187,7 +187,7 @@ const data = [
     warranty: 24,
     rating: 4.8,
     stock: 78,
-    image: "https://images.unsplash.com/photo-1678911820864-e5cad1f0183a?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTZwTDPKTSdKqonQydW83mgROP0WjiwCdpF6Uh_eKKmCzI_ju4fxuaaIWFjjkFtALVjffwFRZ-NnTIWKjbl00BeaHGzSSkBdFKeGjbdmzZNxL3vLbi9yEUR&usqp=CAE",
     description:
       "The Galaxy S23 Ultra features Samsung's most advanced camera system with a 200MP main sensor, 100x Space Zoom, and enhanced Nightography. Powered by the Snapdragon 8 Gen 2 processor and a massive 5,000mAh battery, with S Pen integration for enhanced productivity.",
   },
@@ -199,34 +199,11 @@ const data = [
     warranty: 12,
     rating: 4.9,
     stock: 45,
-    image: "https://images.unsplash.com/photo-1696956531233-f8db6f7a7368?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTBFxlSKm3agFVGLdYypPU1jDXH0FahrvObivpH8zSYAGTfq2-jOu6bFUlNaYsl-2H-1sTFlibMiU65OKODLEokEOC7vpbuXc2muKHF_nUkSOy7oEsQFEGurQ&usqp=CAE",
     description:
       "Apple's flagship smartphone featuring the A17 Pro chip, a titanium design, and a 48MP camera system with enhanced computational photography. Includes USB-C connectivity, improved battery life, and the Dynamic Island feature.",
   },
-  {
-    productName: "Sony WH-1000XM5",
-    productType: "Headphones",
-    price: 399,
-    condition: "New",
-    warranty: 12,
-    rating: 4.7,
-    stock: 120,
-    image: "https://images.unsplash.com/photo-1618329340733-5b27c5f99aa6?q=80&w=600&auto=format&fit=crop",
-    description:
-      "Industry-leading noise cancellation headphones with 8 microphones and Auto NC Optimizer. Features 30-hour battery life, LDAC support for high-resolution audio, and speak-to-chat technology that automatically pauses music when you speak.",
-  },
-  {
-    productName: "MacBook Pro 16-inch",
-    productType: "Laptop",
-    price: 2499,
-    condition: "New",
-    warranty: 12,
-    rating: 4.8,
-    stock: 35,
-    image: "https://images.unsplash.com/photo-1609240873441-5c544026b139?q=80&w=600&auto=format&fit=crop",
-    description:
-      "Powered by the M3 Pro or M3 Max chip, this laptop delivers exceptional performance and efficiency. Features a stunning Liquid Retina XDR display, up to 32GB unified memory, and up to 8TB SSD storage with all-day battery life.",
-  },
+  
   {
     productName: 'LG C3 OLED 65"',
     productType: "Television",
@@ -235,7 +212,7 @@ const data = [
     warranty: 24,
     rating: 4.9,
     stock: 28,
-    image: "https://images.unsplash.com/photo-1593784991669-1b6d93908d8c?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSXsp432z5RPVRtLTrz-XoVka1-T0YaX4hXp5wKfLCzBTVIwAJ3KuVxU1HeGm_cylX3UEQOUj4QV3QyIVFiqEmM_Hwm_b0u1zwNFbRY1tSGcV0orTgyuvM6&usqp=CAE",
     description:
       "LG's premium OLED TV with perfect blacks, infinite contrast, and over a billion colors. Features the α9 Gen6 AI Processor 4K for enhanced picture and sound quality, NVIDIA G-SYNC compatibility, and a sleek design.",
   },
@@ -259,19 +236,19 @@ const data = [
     warranty: 24,
     rating: 4.8,
     stock: 22,
-    image: "https://images.unsplash.com/photo-1533425894556-963b14de4944?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQs6dQGR5G_GNjlhbJzUYOaPM7kr4HzlUqaByNgxuTRKpAbTn3wrReqsdiA_AxtfbKoxXCZt3JWir9SCazK0043doO92kASyOMxSWnjCDn6RYkd4tYn7pen&usqp=CAE",
     description:
       "A professional-grade mirrorless camera with a 24.2MP CMOS sensor, in-body image stabilization, and 40fps continuous shooting. Capable of 4K60p video recording and featuring advanced subject detection autofocus.",
   },
   {
-    productName: "iPad Pro 12.9-inch",
+    productName: "iPad 12.9-inch",
     productType: "Tablet",
     price: 1099,
     condition: "New",
     warranty: 12,
     rating: 4.9,
     stock: 42,
-    image: "https://images.unsplash.com/photo-1589739900243-4b52cd9b3581?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTn2GgqG2LYK48ug1ffwifvnQZlJM-yQb7T-S8gtxOxkfL5-ZxeFxcXyniBkuZFUiLErJL08VWcfu43VhL5vL9KfJaoBp2QkwW01DbGGAkU&usqp=CAE",
     description:
       "Apple's most powerful tablet featuring the M2 chip, a stunning Liquid Retina XDR display with ProMotion technology, and support for Apple Pencil and Magic Keyboard. Perfect for creative professionals and power users.",
   },
@@ -343,7 +320,7 @@ const data = [
     warranty: 60,
     rating: 4.9,
     stock: 110,
-    image: "https://images.unsplash.com/photo-1597838816882-4197985a6be4?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRn9CRT355uG08Wgc1aTZmYuRfBugBibzvNEky9ouMyZpY598ffhf1rZz4lnGXaqAHa_sdavwHX1h8vBwbP7OyhYSDAHl2b6Csyw_1SshsfrMD_5SrqXZgxTA&usqp=CAE",
     description:
       "PCIe 4.0 NVMe SSD with read speeds up to 7,000 MB/s and write speeds up to 5,100 MB/s. Features nickel-coated controller and heat spreader for thermal management and Samsung Magician software support.",
   },
@@ -379,7 +356,7 @@ const data = [
     warranty: 24,
     rating: 4.7,
     stock: 38,
-    image: "https://images.unsplash.com/photo-1545516181-59075b40a8b9?q=80&w=600&auto=format&fit=crop",
+    image: "https://www.headphonezone.in/cdn/shop/products/Headphone-Zone-Sonos-Arc-Black-01.jpg?v=1640346450&width=800",
     description:
       "Premium soundbar with Dolby Atmos support, 11 high-performance drivers, and Trueplay tuning technology. Features voice control with Amazon Alexa or Google Assistant and seamless integration with other Sonos speakers.",
   },
@@ -431,30 +408,8 @@ const data = [
     description:
       "Cordless stick vacuum with up to 60 minutes of run time, HEPA filtration, and a portable charging stand. Features a 5-step filtration system, detachable hand vacuum, and Power Drive Nozzle for effective cleaning.",
   },
-  {
-    productName: "ASUS ROG Strix G17",
-    productType: "Gaming Laptop",
-    price: 1799,
-    condition: "New",
-    warranty: 24,
-    rating: 4.6,
-    stock: 25,
-    image: "https://images.unsplash.com/photo-1637971894048-4dfc312ae6a2?q=80&w=600&auto=format&fit=crop",
-    description:
-      "Gaming powerhouse with AMD Ryzen 9 processor, NVIDIA GeForce RTX 4070 graphics, and a 17.3-inch 240Hz display. Features per-key RGB lighting, advanced cooling system, and Wi-Fi 6E connectivity.",
-  },
-  {
-    productName: "Philips Hue Starter Kit",
-    productType: "Smart Lighting",
-    price: 199,
-    condition: "New",
-    warranty: 36,
-    rating: 4.8,
-    stock: 90,
-    image: "https://images.unsplash.com/photo-1573771871140-95de627687d7?q=80&w=600&auto=format&fit=crop",
-    description:
-      "Smart lighting system including the Hue Bridge and 4 color-changing LED bulbs. Control lights via smartphone app or voice, set schedules and routines, and sync with music, TV, and games.",
-  },
+  
+ 
   {
     productName: "DJI Mavic 3 Pro",
     productType: "Drone",
@@ -511,7 +466,7 @@ const data = [
     warranty: 12,
     rating: 4.5,
     stock: 75,
-    image: "https://images.unsplash.com/photo-1577937927133-66ef973dfd0e?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTCUuUqDHFvW6WOeMl2XcxJzrKxxlz46BpPvrGxk2MxfkainW7IRYp6naUuAUhjTiaTjn5mpa6oxPX2gWt5S9HpNjevYqb0NY4iHB-zvXV4K328-0zwWBfCssZk&usqp=CAE",
     description:
       "Temperature-controlled smart mug that keeps your beverage at your preferred temperature (between 120°F - 145°F) for up to 1.5 hours on a single charge, or all day on the included charging coaster.",
   },
@@ -547,7 +502,7 @@ const data = [
     warranty: 84,
     rating: 4.9,
     stock: 40,
-    image: "https://images.unsplash.com/photo-1590332841687-5b30f9f884b9?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQMjTWa_9kBGjNBC2OexWHSftNyZI67VcUvLnEVXCsCugyXiHYuiBI-XdkKa0Y3fQcwNKLKiIJPfdcbIUJZYpZoeWJt4aRQ0UlanWK0thm6ZExtjbbFXDgm&usqp=CAEp",
     description:
       "Professional-grade blender with a 2.2 HP motor, aircraft-"
   }
