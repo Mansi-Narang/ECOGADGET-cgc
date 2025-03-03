@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, MouseEvent } from "react";
 import {
   Menu,
   User,
@@ -29,14 +29,13 @@ export function NavBar() {
   const [showAuthOptions, setShowAuthOptions] = useState(false);
 
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-
-      if(!dropdownRef || !dropdownRef.current) {
+    function handleClickOutside(event: globalThis.MouseEvent) {
+      if (!dropdownRef || !dropdownRef.current) {
         return;
       }
       if (
-        dropdownRef.current && 
-        event.target instanceof Node && 
+        dropdownRef.current &&
+        event.target instanceof Node &&
         !dropdownRef.current.contains(event.target)
       ) {
         setShowAuthOptions(false);
@@ -51,7 +50,7 @@ export function NavBar() {
 
   const user = useUser();
 
-  const handleLogoutClick = async (e: Event) => {
+  const handleLogoutClick = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     const result = await axios({
