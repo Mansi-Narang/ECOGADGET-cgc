@@ -55,7 +55,10 @@ interface ProductInterface {
   productName: string,
   id: string,
   productType: string,
-  price: number
+  price: number,
+  category: string,
+  name: string,
+  status: string,
 }
 
 export default function AdminDashboard() {
