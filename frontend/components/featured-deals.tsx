@@ -104,7 +104,7 @@ export function FeaturedDeals({ sectionRef }) {
                     <Button
                       className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-black"
                       onClick={
-                        async (e) => {
+                        async () => {
                           if (!razorpayLoaded) {
                             console.error("Razorpay not loaded");
                             return;

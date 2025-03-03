@@ -106,7 +106,7 @@ export default function RentPage() {
 
     fetchDevice();
 
-  });
+  }, [deviceId]);
 
 
   if (loading) {
