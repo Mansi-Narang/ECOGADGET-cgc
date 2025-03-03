@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { useState } from "react"
+import { ChangeEvent, useState } from "react"
 import Swal from "sweetalert2";
 import axios from "axios"
 
@@ -21,7 +21,7 @@ export function ContactSection() {
     message: ""
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData((prevData) => {
       return {
         ...prevData,
