@@ -70,7 +70,7 @@ export function ProductCard({
                 amount, currency: "INR"
               });
 
-              const options = {
+              const options: RazorpayOptions = {
                 "key": response1.data.key,
                 "amount": response1.data.amount,
                 "currency": "INR",
@@ -79,7 +79,7 @@ export function ProductCard({
                 "callback_url": "/orders"
               };
               if(typeof window != 'undefined' && 'Razorpay' in window) {
-                const RazorpayConstructor = (window as any).Razorpay;
+                const RazorpayConstructor = (window).Razorpay;
                 const rzp1 = new RazorpayConstructor(options);
                 rzp1.open();
               }
