@@ -58,7 +58,7 @@ export function ProductCard({
         <StarRating rating={rating} />
 
         <div className="flex items-baseline gap-2">
-          <span className="text-2xl font-bold">₹{price.toFixed(2)}</span>
+          <span className="text-2xl font-bold">₹{price}</span>
         </div>
 
         <div className="space-y-2 text-sm text-gray-600">

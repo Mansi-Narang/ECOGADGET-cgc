@@ -272,7 +272,7 @@ const data = [
     warranty: 12,
     rating: 4.8,
     stock: 50,
-    image: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=600&auto=format&fit=crop",
+    image: "https://gameloot.in/wp-content/uploads/2019/02/PS4-Sony-PlayStation-4-Pro-1TB-Console-White-Pre-owned.jpg",
     description:
       "Next-generation gaming console featuring an ultra-high speed SSD, ray tracing support, 4K gaming at up to 120fps, and haptic feedback controllers. Backward compatible with most PS4 games.",
   },
@@ -284,7 +284,7 @@ const data = [
     warranty: 24,
     rating: 4.7,
     stock: 65,
-    image: "https://images.unsplash.com/photo-1622480916113-9000ac49b79d?q=80&w=600&auto=format&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ9Een2V00vj6NEiAwzGYUxoNAUYu6E5fbImU0-V0A3dSUmKAGEGQ2R0H-ekY1wjnWcaciuTemFgWYKq7Vk5BqgPI570aEMo4TL3vU0vlfkYTbhhrjuH6Z0&usqp=CAE",
     description:
       "Cordless vacuum with a laser that reveals microscopic dust, an LCD screen that counts and categories particles, and powerful suction. Includes multiple attachments and up to 60 minutes of fade-free power.",
   },
@@ -392,7 +392,7 @@ const data = [
     warranty: 24,
     rating: 4.7,
     stock: 32,
-    image: "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?q=80&w=600&auto=format&fit=crop",
+    image: "https://somethingsbrewing.in/cdn/shop/files/1_ef77aee2-fd32-4de5-90ca-3d82d1cad398.jpg?v=1736765768&width=1100",
     description:
       "Semi-automatic espresso machine with an integrated conical burr grinder, digital temperature control, and manual milk texturing. Features a 15 bar Italian pump and precision extraction for café quality coffee at home.",
   },
@@ -466,7 +466,7 @@ const data = [
     warranty: 12,
     rating: 4.5,
     stock: 75,
-    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTCUuUqDHFvW6WOeMl2XcxJzrKxxlz46BpPvrGxk2MxfkainW7IRYp6naUuAUhjTiaTjn5mpa6oxPX2gWt5S9HpNjevYqb0NY4iHB-zvXV4K328-0zwWBfCssZk&usqp=CAE",
+    image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTWg2r6kW3D_V6M1a37GnnZgRrgveEE-KyRNijaQhdX_9tHv7B8kE0AlmwSkuttFhPSX9rCva13U9pvs3bBsSjsZIomaj-1N-FoQ5yUptI5p2hySeqeFnTP&usqp=CAE",
     description:
       "Temperature-controlled smart mug that keeps your beverage at your preferred temperature (between 120°F - 145°F) for up to 1.5 hours on a single charge, or all day on the included charging coaster.",
   },
