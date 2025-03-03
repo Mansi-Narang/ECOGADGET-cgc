@@ -114,7 +114,7 @@ export function FeaturedDeals({ sectionRef }) {
                           };
 
                           if(typeof window != 'undefined' && 'Razorpay' in window) {
-                            const RazorpayConstructor = (window as any).Razorpay;
+                            const RazorpayConstructor = (window).Razorpay;
                             const rzp1 = new RazorpayConstructor(options);
                             rzp1.open();
                           }
