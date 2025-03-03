@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { FormEvent, useState } from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 import Swal from 'sweetalert2';
 import axios from "axios";
 
@@ -70,7 +70,7 @@ export default function LoginPage() {
     }
   }
 
-  const handleChange = async(e) => {
+  const handleChange = async(e: ChangeEvent<HTMLInputElement>) => {
     setLoginData((prevVal) => {
       return { ...prevVal, [e.target.name]: e.target.value }
     });
